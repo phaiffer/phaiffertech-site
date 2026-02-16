@@ -1,26 +1,48 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* Tailwind v4 theme tokens live here */
+@theme {
+  --color-brand-navy: #020617;
+  --color-brand-cyan: #0ea5e9;
+  --color-brand-cyan-2: #1a9edb;
+
+  --color-ui-fg: #f5f7f8;
+  --color-ui-muted: #b6bec5;
+  --color-ui-steel: #919aa2;
+
+  --radius-xl: 14px;
+  --radius-2xl: 18px;
+
+  --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.35);
+  --shadow-glow: 0 0 0 1px rgba(14, 165, 233, 0.25), 0 10px 30px rgba(14, 165, 233, 0.15);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Global base styling */
+html, body {
+  height: 100%;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-brand-navy);
+  color: var(--color-ui-fg);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background: color-mix(in oklab, var(--color-brand-cyan) 25%, transparent);
+}
+
+/* Optional: map your old token names to Tailwind-like utility usage via custom classes */
+@layer utilities {
+  .shadow-soft { box-shadow: var(--shadow-soft); }
+  .shadow-glow { box-shadow: var(--shadow-glow); }
+
+  .text-ui-muted { color: var(--color-ui-muted); }
+  .text-ui-steel { color: var(--color-ui-steel); }
+
+  .bg-brand-navy { background: var(--color-brand-navy); }
+  .text-brand-cyan { color: var(--color-brand-cyan); }
 }
