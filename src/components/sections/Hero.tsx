@@ -4,81 +4,76 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
+import { site } from "@/content/site";
 
+/**
+ * Hero Section:
+ * - High-visibility brand logo with custom glow effect
+ * - Optimized contrast for dark theme
+ */
 export function Hero() {
   return (
-    <section id="inicio" className="relative overflow-hidden">
-      {/* Background layers */}
+    <section id="inicio" className="relative min-h-[90vh] flex items-center overflow-hidden">
+      {/* Background radial gradient to improve contrast */}
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-b from-white/5 via-transparent to-transparent" />
-        <div className="absolute -top-40 left-1/2 h-[520px] w-[520px] -translate-x-1/2 rounded-full bg-brand-cyan/10 blur-3xl" />
-        <div className="absolute bottom-[-260px] right-[-260px] h-[520px] w-[520px] rounded-full bg-white/5 blur-3xl" />
+        <div className="absolute inset-0 bg-gradient-to-br from-brand-cyan/10 via-transparent to-transparent" />
       </div>
 
-      <Container className="relative py-20 md:py-28">
-        <div className="grid items-center gap-14 md:grid-cols-2">
-          <div>
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs tracking-widest text-ui-muted">
-              <span className="text-brand-cyan">[</span>
-              WILLlIAN_PHAIFFER_ARCH
-              <span className="text-brand-cyan">]</span>
+      <Container className="relative">
+        <div className="grid gap-8 lg:grid-cols-[1.3fr_0.7fr] items-center">
+          
+          <div className="z-10">
+            <div className="mb-8 inline-block border-l-4 border-brand-cyan pl-6 text-xs font-bold tracking-[0.4em] text-ui-muted uppercase">
+              {site.hero.eyebrow}
             </div>
 
             <motion.h1
-              initial={{ opacity: 0, y: 14 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="text-5xl font-extrabold leading-[1.05] tracking-tight md:text-6xl"
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-6xl font-black leading-[0.85] tracking-tighter md:text-8xl lg:text-[9rem]"
             >
-              Software <br />
-              & Data <br />
-              <span className="text-brand-cyan">Synthesis.</span>
+              {site.hero.titleTop} <br />
+              <span className="text-brand-cyan">{site.hero.titleMid}</span>
             </motion.h1>
 
-            <p className="mt-6 max-w-xl text-base leading-relaxed text-ui-muted">
-              Arquitetura e engenharia para sistemas resilientes. Unindo robustez de{" "}
-              <span className="text-ui-fg">Java/Spring</span> com inteligência de{" "}
-              <span className="text-ui-fg">Python/PySpark</span> em stacks cloud.
+            <p className="mt-10 max-w-3xl text-xl md:text-2xl leading-relaxed text-ui-muted">
+              {site.hero.subtitle}
             </p>
 
-            <div className="mt-10 flex flex-wrap items-center gap-4">
-              <a href="#expertise">
-                <Button variant="primary">Explorar Expertise</Button>
-              </a>
-              <a href="#carreira">
-                <Button variant="secondary">Track Record</Button>
-              </a>
+            <div className="mt-14 flex flex-wrap gap-8">
+              <Button href={site.hero.ctaPrimary.href} className="px-12 py-5 text-base tracking-[0.2em] uppercase">
+                {site.hero.ctaPrimary.label}
+              </Button>
+              <Button href={site.hero.ctaSecondary.href} variant="secondary" className="px-12 py-5 text-base tracking-[0.2em] uppercase">
+                {site.hero.ctaSecondary.label}
+              </Button>
             </div>
           </div>
 
-          {/* Brand block */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.96 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="relative"
+          {/* Enhanced Logo Section:
+              - Higher opacity (opacity-60)
+              - Drop-shadow and Glow effect
+              - Subtle floating animation
+          */}
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 0.6, scale: 1 }}
+            transition={{ duration: 1.2, ease: "easeOut" }}
+            className="hidden lg:flex justify-end relative"
           >
-            <div className="rounded-2xl border border-white/10 bg-white/5 p-10 shadow-soft">
-              <div className="mx-auto flex items-center justify-center">
-                <div className="relative h-56 w-56">
-                  <Image
-                    src="/logo.png"
-                    alt="Phaiffer Tech Logo"
-                    fill
-                    className="object-contain drop-shadow-[0_20px_40px_rgba(0,0,0,0.35)]"
-                    priority
-                  />
-                </div>
-              </div>
-
-              <div className="mt-8 text-center">
-                <div className="text-2xl font-extrabold">
-                  Phaiffer <span className="text-brand-cyan">Tech</span>
-                </div>
-                <div className="mt-2 text-sm tracking-[0.3em] text-ui-muted">
-                  BUILDING THE FUTURE
-                </div>
-              </div>
+            {/* Background Glow Effect */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[450px] w-[450px] bg-brand-cyan/20 blur-[100px] rounded-full" />
+            
+            <div className="relative h-[600px] w-[600px] drop-shadow-[0_0_30px_rgba(14,165,233,0.3)]">
+              <Image
+                className="object-contain image-render-auto"
+                style={{ imageRendering: 'smooth' }}
+                src="/logo1.png"
+                alt="Phaiffer Tech High Vis Logo"
+                fill
+                priority
+              />
             </div>
           </motion.div>
         </div>
