@@ -1,0 +1,89 @@
+{
+  "localeSwitcher": {
+    "label": "EN-US",
+    "aria": "Trocar idioma do site para inglês"
+  },
+  "nav": {
+    "home": "Início",
+    "lakehouse": "Lakehouse",
+    "expertise": "Expertise",
+    "stack": "Stack",
+    "career": "Carreira",
+    "contact": "Contato",
+    "engineering": "Engenharia",
+    "services": "Serviços",
+    "products": "Produtos",
+    "caseStudies": "Cases",
+    "consulting": "Consultoria"
+  },
+  "hero": {
+    "eyebrow": "[ ARQUITETO_SENIOR_DE_SOFTWARE_E_DADOS ]",
+    "titleTop": "Software",
+    "titleMid": "& Dados",
+    "subtitle": "Arquiteto de Software e Engenheiro de Dados Sênior com mais de 6 anos de experiência em plataformas cloud-native, backend resiliente e analytics em escala.",
+    "ctaPrimary": "Explorar Expertise",
+    "ctaSecondary": "Ver Trajetória"
+  },
+  "home": {
+    "sections": {
+      "expertise": {
+        "title": "Expertise",
+        "subtitle": "Blocos estratégicos de capacidade para entrega de soluções em alta escala.",
+        "item1": "Arquitetura de Plataforma",
+        "item2": "Engenharia Backend",
+        "item3": "Engenharia de Dados",
+        "item4": "Migração para Cloud",
+        "item5": "Otimização de Custos"
+      },
+      "stack": {
+        "title": "Stack",
+        "subtitle": "Pilares tecnológicos usados para construir sistemas resilientes e escaláveis.",
+        "item1": "Java + Spring",
+        "item2": "Python + PySpark",
+        "item3": "Azure e AWS",
+        "item4": "Snowflake + Delta Lake",
+        "item5": "Kubernetes + Containers"
+      },
+      "career": {
+        "title": "Carreira",
+        "subtitle": "Histórico comprovado de entrega em ambientes corporativos e produtos críticos.",
+        "item1": "Plataformas Corporativas",
+        "item2": "Pipelines de Alta Vazão",
+        "item3": "Liderança Técnica",
+        "item4": "Entrega Ágil"
+      },
+      "contact": {
+        "title": "Contato",
+        "subtitle": "Inicie uma conversa técnica focada em arquitetura, consultoria ou modernização de plataforma.",
+        "item1": "Assessment Técnico",
+        "item2": "Discovery Call",
+        "item3": "Roadmap de Entrega",
+        "ready": "Pronto para discutir seu projeto?"
+      }
+    },
+    "backToTop": "Voltar ao topo",
+    "emailCta": "contact@phaiffertech.com"
+  },
+  "lakehouse": {
+    "eyebrow": "// case study",
+    "title": "NYC TLC Lakehouse",
+    "summary": "Pipeline completo com Spark e Delta Lake usando Medallion, contratos rígidos, fluxo de quarentena, monitoramento de schema drift e execução determinística da demo.",
+    "repositoryCta": "Repositório no GitHub",
+    "runbookCta": "Runbook",
+    "contactCta": "Contato",
+    "demoTitle": "Demo reproduzível",
+    "windowLabel": "janela",
+    "runIdLabel": "run_id",
+    "bronzeEvents": "Eventos Bronze",
+    "silverTrips": "Corridas Silver",
+    "goldFacts": "Fatos diários Gold",
+    "avgFare": "Tarifa média por corrida",
+    "chartTitle": "Top média diária de tarifa por corrida",
+    "snapshotLabel": "Snapshot"
+  },
+  "projectSummaries": {
+    "iot": "Arquitetura IoT corporativa orientada a eventos com isolamento de tenants e operação em alta disponibilidade.",
+    "crm": "Plataforma CRM pronta para SaaS com modelo multi-tenant e base RBAC para hardening empresarial.",
+    "petflow": "Arquitetura de produto vertical com foco em confiabilidade, observabilidade e evolução segura para nível enterprise."
+  }
+}

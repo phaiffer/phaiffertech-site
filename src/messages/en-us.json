@@ -1,0 +1,89 @@
+{
+  "localeSwitcher": {
+    "label": "PT-BR",
+    "aria": "Switch site language to Brazilian Portuguese"
+  },
+  "nav": {
+    "home": "Home",
+    "lakehouse": "Lakehouse",
+    "expertise": "Expertise",
+    "stack": "Stack",
+    "career": "Career",
+    "contact": "Contact",
+    "engineering": "Engineering",
+    "services": "Services",
+    "products": "Products",
+    "caseStudies": "Case Studies",
+    "consulting": "Consulting"
+  },
+  "hero": {
+    "eyebrow": "[ SENIOR_SOFTWARE_AND_DATA_ARCHITECT ]",
+    "titleTop": "Software",
+    "titleMid": "& Data",
+    "subtitle": "Senior Software Architect and Data Engineer with 6+ years delivering cloud-native platforms, resilient backend systems, and large-scale analytics products.",
+    "ctaPrimary": "Explore Expertise",
+    "ctaSecondary": "View Track Record"
+  },
+  "home": {
+    "sections": {
+      "expertise": {
+        "title": "Expertise",
+        "subtitle": "Strategic capability blocks focused on high-scale solution delivery.",
+        "item1": "Platform Architecture",
+        "item2": "Backend Engineering",
+        "item3": "Data Engineering",
+        "item4": "Cloud Migration",
+        "item5": "Cost Optimization"
+      },
+      "stack": {
+        "title": "Stack",
+        "subtitle": "Core technology pillars used to build resilient and scalable systems.",
+        "item1": "Java + Spring",
+        "item2": "Python + PySpark",
+        "item3": "Azure and AWS",
+        "item4": "Snowflake + Delta Lake",
+        "item5": "Kubernetes + Containers"
+      },
+      "career": {
+        "title": "Career",
+        "subtitle": "Proven delivery record in enterprise environments and mission-critical products.",
+        "item1": "Enterprise Platforms",
+        "item2": "High Throughput Pipelines",
+        "item3": "Technical Leadership",
+        "item4": "Agile Delivery"
+      },
+      "contact": {
+        "title": "Contact",
+        "subtitle": "Start a focused technical discussion for architecture, consulting, or platform modernization.",
+        "item1": "Technical Assessment",
+        "item2": "Discovery Call",
+        "item3": "Delivery Roadmap",
+        "ready": "Ready to discuss your project?"
+      }
+    },
+    "backToTop": "Back to top",
+    "emailCta": "contact@phaiffertech.com"
+  },
+  "lakehouse": {
+    "eyebrow": "// case study",
+    "title": "NYC TLC Lakehouse",
+    "summary": "End-to-end Spark and Delta Lake pipeline with Medallion layering, strict contracts, quarantine flow, schema drift monitoring, and deterministic demo execution.",
+    "repositoryCta": "GitHub Repository",
+    "runbookCta": "Runbook",
+    "contactCta": "Contact",
+    "demoTitle": "Reproducible demo",
+    "windowLabel": "window",
+    "runIdLabel": "run_id",
+    "bronzeEvents": "Bronze events",
+    "silverTrips": "Silver trips",
+    "goldFacts": "Gold daily facts",
+    "avgFare": "Avg fare per trip",
+    "chartTitle": "Top daily average fare per trip",
+    "snapshotLabel": "Snapshot"
+  },
+  "projectSummaries": {
+    "iot": "Flagship enterprise IoT architecture with event-driven ingestion, tenant isolation, and high-availability operations.",
+    "crm": "SaaS-ready CRM platform with multi-tenant model and RBAC foundation for enterprise hardening.",
+    "petflow": "Domain product architecture focused on reliability, observability, and secure growth to enterprise readiness."
+  }
+}

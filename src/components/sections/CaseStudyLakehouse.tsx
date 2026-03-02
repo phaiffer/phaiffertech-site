@@ -1,5 +1,7 @@
 "use client";
 
+import { useMemo } from "react";
+import { useLocale, useTranslations } from "next-intl";
 import {
   CartesianGrid,
   Line,
@@ -13,22 +15,6 @@ import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { lakehouseDemo } from "@/content/lakehouseDemo";
 
-const integerFormatter = new Intl.NumberFormat("en-US");
-const currencyFormatter = new Intl.NumberFormat("en-US", {
-  style: "currency",
-  currency: "USD",
-  minimumFractionDigits: 2,
-  maximumFractionDigits: 2,
-});
-
-function formatInteger(value: number): string {
-  return integerFormatter.format(value);
-}
-
-function formatMoney(value: number): string {
-  return currencyFormatter.format(value);
-}
-
 const commandSnippet = `make setup
 make download YEAR=2024 MONTH=1
 make reset
@@ -41,39 +27,58 @@ const repositoryUrl = "https://github.com/phaiffer/nyc-tlc-lakehouse";
 const runbookUrl = "https://github.com/phaiffer/nyc-tlc-lakehouse/blob/main/docs/runbook.md";
 
 export function CaseStudyLakehouse() {
+  const locale = useLocale();
+  const t = useTranslations("lakehouse");
+
+  const integerFormatter = useMemo(
+    () => new Intl.NumberFormat(locale === "pt-br" ? "pt-BR" : "en-US"),
+    [locale],
+  );
+
+  const currencyFormatter = useMemo(
+    () =>
+      new Intl.NumberFormat(locale === "pt-br" ? "pt-BR" : "en-US", {
+        style: "currency",
+        currency: "USD",
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2,
+      }),
+    [locale],
+  );
+
+  const formatInteger = (value: number): string => integerFormatter.format(value);
+  const formatMoney = (value: number): string => currencyFormatter.format(value);
+
   return (
     <section id="lakehouse" className="border-t border-white/5 py-20 lg:py-28">
       <Container>
         <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
           <div className="sticky top-28">
-            <p className="text-[10px] font-bold tracking-[0.3em] text-brand-cyan uppercase">{"// case study"}</p>
-            <h2 className="mt-4 text-4xl font-extrabold tracking-tight md:text-5xl">NYC TLC Lakehouse</h2>
-            <p className="mt-6 text-base leading-relaxed text-ui-muted">
-              End-to-end Spark + Delta pipeline with Medallion layering, strict contracts, quarantine flows, schema-drift
-              monitoring, and deterministic demo execution to reproduce the same snapshot and KPIs on demand.
-            </p>
+            <p className="text-[10px] font-bold tracking-[0.3em] text-brand-cyan uppercase">{t("eyebrow")}</p>
+            <h2 className="mt-4 text-4xl font-extrabold tracking-tight md:text-5xl">{t("title")}</h2>
+            <p className="mt-6 text-base leading-relaxed text-ui-muted">{t("summary")}</p>
 
             <div className="mt-8 flex flex-wrap gap-3">
               <Button href={repositoryUrl} target="_blank" rel="noreferrer">
-                GitHub Repository
+                {t("repositoryCta")}
               </Button>
               <Button href={runbookUrl} variant="secondary" target="_blank" rel="noreferrer">
-                Runbook
+                {t("runbookCta")}
               </Button>
-              <Button href="#contato" variant="ghost">
-                Contact
+              <Button href="#contact" variant="ghost">
+                {t("contactCta")}
               </Button>
             </div>
 
             <div className="mt-8 rounded-[var(--radius-xl)] border border-white/10 bg-white/[0.02] p-5">
-              <p className="text-xs font-semibold tracking-[0.16em] text-ui-muted uppercase">Reproducible demo</p>
+              <p className="text-xs font-semibold tracking-[0.16em] text-ui-muted uppercase">{t("demoTitle")}</p>
               <pre className="mt-4 overflow-x-auto text-xs leading-relaxed text-ui-muted">{commandSnippet}</pre>
               <div className="mt-4 space-y-1 text-xs text-ui-muted">
                 <p>
-                  window: <span className="text-ui-fg">{lakehouseDemo.window}</span>
+                  {t("windowLabel")}: <span className="text-ui-fg">{lakehouseDemo.window}</span>
                 </p>
                 <p className="break-all">
-                  run_id: <span className="text-ui-fg">{lakehouseDemo.runId}</span>
+                  {t("runIdLabel")}: <span className="text-ui-fg">{lakehouseDemo.runId}</span>
                 </p>
               </div>
             </div>
@@ -82,30 +87,34 @@ export function CaseStudyLakehouse() {
           <div className="space-y-6">
             <div className="grid gap-4 sm:grid-cols-2">
               <div className="rounded-[var(--radius-xl)] border border-white/10 bg-white/[0.02] p-5">
-                <p className="text-xs font-semibold tracking-[0.14em] text-ui-muted uppercase">Bronze events</p>
+                <p className="text-xs font-semibold tracking-[0.14em] text-ui-muted uppercase">{t("bronzeEvents")}</p>
                 <p className="mt-2 text-3xl font-black tracking-tight">{formatInteger(lakehouseDemo.bronzeEventsCount)}</p>
               </div>
 
               <div className="rounded-[var(--radius-xl)] border border-white/10 bg-white/[0.02] p-5">
-                <p className="text-xs font-semibold tracking-[0.14em] text-ui-muted uppercase">Silver trips</p>
+                <p className="text-xs font-semibold tracking-[0.14em] text-ui-muted uppercase">{t("silverTrips")}</p>
                 <p className="mt-2 text-3xl font-black tracking-tight">{formatInteger(lakehouseDemo.silverTripsCount)}</p>
               </div>
 
               <div className="rounded-[var(--radius-xl)] border border-white/10 bg-white/[0.02] p-5">
-                <p className="text-xs font-semibold tracking-[0.14em] text-ui-muted uppercase">Gold daily facts</p>
-                <p className="mt-2 text-3xl font-black tracking-tight">{formatInteger(lakehouseDemo.goldDailyFactRowCount)}</p>
+                <p className="text-xs font-semibold tracking-[0.14em] text-ui-muted uppercase">{t("goldFacts")}</p>
+                <p className="mt-2 text-3xl font-black tracking-tight">
+                  {formatInteger(lakehouseDemo.goldDailyFactRowCount)}
+                </p>
               </div>
 
               <div className="rounded-[var(--radius-xl)] border border-brand-cyan/30 bg-brand-cyan/10 p-5">
-                <p className="text-xs font-semibold tracking-[0.14em] text-ui-muted uppercase">Avg fare per trip</p>
+                <p className="text-xs font-semibold tracking-[0.14em] text-ui-muted uppercase">{t("avgFare")}</p>
                 <p className="mt-2 text-3xl font-black tracking-tight">{formatMoney(lakehouseDemo.monthAvgFarePerTrip)}</p>
               </div>
             </div>
 
             <div className="rounded-[var(--radius-xl)] border border-white/10 bg-white/[0.02] p-5">
               <div className="flex flex-wrap items-center justify-between gap-3">
-                <p className="text-sm font-semibold text-ui-fg">Top daily average fare per trip</p>
-                <p className="text-xs text-ui-muted">Snapshot: {lakehouseDemo.generatedAtUtc}</p>
+                <p className="text-sm font-semibold text-ui-fg">{t("chartTitle")}</p>
+                <p className="text-xs text-ui-muted">
+                  {t("snapshotLabel")}: {lakehouseDemo.generatedAtUtc}
+                </p>
               </div>
 
               <div className="mt-4 h-72 w-full">
