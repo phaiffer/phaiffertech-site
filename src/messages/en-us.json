@@ -98,7 +98,7 @@
       },
       "enterpriseDataPlatform": {
         "title": "Enterprise Data Platform",
-        "summary": "Public lakehouse architecture with reproducible pipelines, contract enforcement, and operational runbook traceability."
+        "summary": "Flagship industrial data platform architecture with dual operating modes, governed contracts, and reproducible delivery evidence."
       },
       "crmSaas": {
         "title": "CRM SaaS Platform"
@@ -129,25 +129,73 @@
       "caseStudiesCta": "View all case studies"
     },
     "enterpriseDataPlatform": {
-      "eyebrow": "// public engineering case",
-      "title": "Enterprise Data Platform",
-      "summary": "NYC TLC Lakehouse reference platform proving reproducible analytics and reliable pipeline operations.",
-      "repositoryCta": "Open repository",
-      "runbookCta": "Open runbook",
-      "architecture": {
-        "title": "Architecture Highlights",
-        "item1": "Medallion data model with explicit Bronze, Silver, and Gold responsibilities.",
-        "item2": "Schema and quality contracts with quarantine flow for invalid records.",
-        "item3": "Deterministic local orchestration for reproducible demos and validation.",
-        "item4": "Operational metadata for traceable run windows and outputs."
+      "eyebrow": "// flagship public engineering case",
+      "title": "Enterprise Industrial Data Platform",
+      "summary": "Flagship architecture narrative demonstrating how one codebase supports two operating modes: a local reproducible lakehouse for deterministic validation and an enterprise cloud stack for governed production analytics.",
+      "repositoryCta": "Open public repository",
+      "caseStudyCta": "Open KPI case study",
+      "executiveSummary": {
+        "title": "Executive Summary",
+        "body": "This project presents a production-oriented data platform that keeps engineering rigor visible in a public repository. The architecture separates experimentation from enterprise operation through a two-mode model, while preserving shared contracts, quality assertions, and operational metadata across both modes."
       },
-      "delivery": {
-        "title": "Delivery Focus",
-        "item1": "Public demonstration of end-to-end data engineering standards.",
-        "item2": "Operational runbook reducing onboarding and troubleshooting time.",
-        "item3": "Evidence-ready metrics for architecture interviews and consulting proposals."
+      "architectureOverview": {
+        "title": "Architecture Overview (Mode 1 / Mode 2)",
+        "intro": "The platform intentionally exposes two execution paths so delivery teams can validate logic locally and then promote the same semantics to an enterprise runtime.",
+        "mode1Label": "Mode 1",
+        "mode1Title": "Local Lakehouse Mode (Deterministic)",
+        "mode1Body": "Runs with local orchestration, Delta-based medallion layers, and fixed sample windows. It is optimized for reproducibility, root-cause analysis, and interview-safe demonstration.",
+        "mode2Label": "Mode 2",
+        "mode2Title": "Enterprise Stack Mode (Governed)",
+        "mode2Body": "Runs on managed enterprise services with IAM boundaries, centralized catalog/governance, and team-level observability. It is optimized for compliance, scale, and controlled operations.",
+        "tradeoff": "Trade-off: Mode 1 prioritizes deterministic debugging and onboarding speed; Mode 2 prioritizes governance controls, security segregation, and long-run reliability. Shared contracts avoid behavior drift between modes."
       },
-      "caseStudiesCta": "View all case studies"
+      "governance": {
+        "title": "Governance and Data Contracts",
+        "item1": "Schema contracts are versioned and validated at ingestion boundaries, preventing silent type drift from propagating downstream.",
+        "item2": "Data quality rules are treated as release gates: failed expectations route records to quarantine and block promotion to trusted layers.",
+        "item3": "Contract ownership is explicit by layer (Bronze, Silver, Gold), with accountable producers and consumers documented in runbooks/ADRs.",
+        "item4": "Lineage and run metadata provide auditability for each published dataset, including window, code revision, and validation outcome."
+      },
+      "twoModeArchitecture": {
+        "title": "Two-Mode Architecture (Local Lakehouse + Enterprise Stack)",
+        "item1": "Mode 1 mirrors medallion semantics locally: Bronze for raw ingestion, Silver for validated conformance, and Gold for analytical consumption.",
+        "item2": "Promotion to Mode 2 preserves model contracts and test logic instead of rewriting business rules per environment.",
+        "item3": "Enterprise mode introduces managed orchestration, secrets/IAM policies, governed catalogs, and workload isolation by domain/team.",
+        "item4": "A consistent run context (run_id, window, validation status) allows deterministic troubleshooting across local and enterprise executions."
+      },
+      "observability": {
+        "title": "Observability and Reliability",
+        "item1": "Pipeline health is tracked through freshness, volume, and quality SLIs with threshold-based alerting tied to operational ownership.",
+        "item2": "Failure handling is explicit: retries for transient faults, quarantine for invalid data, and replay flow for deterministic recovery.",
+        "item3": "Dashboards combine platform metrics (latency, throughput) with data-product metrics (contract pass rate, null ratio, drift deltas).",
+        "item4": "Runbook procedures standardize incident response, reducing MTTR and avoiding ad-hoc recovery steps under pressure."
+      },
+      "cicd": {
+        "title": "CI/CD and Quality Gates",
+        "item1": "CI validates formatting, static checks, unit tests, and contract-focused transformations before any deployment artifact is promoted.",
+        "item2": "Data tests (dbt + expectation suites) run as mandatory gates and fail the pipeline when contract criteria are violated.",
+        "item3": "Artifact promotion is stage-based with explicit approvals, preserving traceability from commit to execution window.",
+        "item4": "Release discipline prioritizes deterministic outcomes over speed, reducing rollback cost in regulated or high-impact contexts."
+      },
+      "adrs": {
+        "title": "Architectural Decisions (ADRs)",
+        "item1": "ADR-001: Adopt medallion layering to enforce progressive trust boundaries and simplify downstream consumption contracts.",
+        "item2": "ADR-002: Keep a deterministic local mode to shorten feedback loops and guarantee reproducible engineering evidence.",
+        "item3": "ADR-003: Encode data quality as executable contracts rather than optional documentation.",
+        "item4": "ADR-004: Standardize run metadata and lineage capture to improve auditability and cross-team incident analysis."
+      },
+      "reproducibility": {
+        "title": "Reproducibility Commands",
+        "intro": "The command sequence below is used to bootstrap dependencies, execute deterministic windows, and validate contract gates end-to-end.",
+        "note": "In enterprise mode, the same logical steps are executed via managed orchestration, preserving contract parity with local runs."
+      },
+      "recruiterProof": {
+        "title": "Recruiter Proof Section",
+        "item1": "Public repository with executable pipeline paths and operational documentation for independent verification.",
+        "item2": "Evidence of architecture reasoning through ADRs, governance boundaries, and quality gate definitions.",
+        "item3": "Clear trade-off articulation between deterministic local delivery and enterprise production constraints.",
+        "item4": "Measurable artifacts (lineage, quality checks, run metadata) ready for technical interview deep dives."
+      }
     },
     "crmSaas": {
       "eyebrow": "// engineering case",

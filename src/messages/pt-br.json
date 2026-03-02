@@ -98,7 +98,7 @@
       },
       "enterpriseDataPlatform": {
         "title": "Plataforma de Dados Enterprise",
-        "summary": "Arquitetura lakehouse pública com pipelines reproduzíveis, contratos de dados e rastreabilidade operacional por runbook."
+        "summary": "Arquitetura flagship de plataforma de dados industrial com dois modos operacionais, contratos governados e evidência reproduzível de entrega."
       },
       "crmSaas": {
         "title": "Plataforma CRM SaaS"
@@ -129,25 +129,73 @@
       "caseStudiesCta": "Ver todos os cases"
     },
     "enterpriseDataPlatform": {
-      "eyebrow": "// case público de engenharia",
-      "title": "Plataforma de Dados Enterprise",
-      "summary": "Plataforma de referência NYC TLC Lakehouse que comprova analytics reproduzível e operação confiável de pipelines.",
-      "repositoryCta": "Abrir repositório",
-      "runbookCta": "Abrir runbook",
-      "architecture": {
-        "title": "Destaques de Arquitetura",
-        "item1": "Modelo Medallion com responsabilidades explícitas em Bronze, Silver e Gold.",
-        "item2": "Contratos de schema e qualidade com fluxo de quarentena para registros inválidos.",
-        "item3": "Orquestração local determinística para demos reproduzíveis e validação.",
-        "item4": "Metadados operacionais para rastrear janelas e saídas de execução."
+      "eyebrow": "// case público flagship de engenharia",
+      "title": "Enterprise Industrial Data Platform",
+      "summary": "Narrativa arquitetural flagship que demonstra como a mesma base de código suporta dois modos de operação: um lakehouse local reproduzível para validação determinística e uma stack enterprise em cloud para analytics governado em produção.",
+      "repositoryCta": "Abrir repositório público",
+      "caseStudyCta": "Abrir case com KPIs",
+      "executiveSummary": {
+        "title": "Resumo Executivo",
+        "body": "Este projeto apresenta uma plataforma de dados orientada a produção, mantendo rigor de engenharia visível em um repositório público. A arquitetura separa experimentação de operação enterprise por meio de um modelo de dois modos, preservando contratos compartilhados, asserts de qualidade e metadados operacionais em ambos os contextos."
       },
-      "delivery": {
-        "title": "Foco de Entrega",
-        "item1": "Demonstração pública de padrões de engenharia de dados ponta a ponta.",
-        "item2": "Runbook operacional reduzindo tempo de onboarding e troubleshooting.",
-        "item3": "Métricas prontas para evidência em entrevistas técnicas e propostas de consultoria."
+      "architectureOverview": {
+        "title": "Visão de Arquitetura (Modo 1 / Modo 2)",
+        "intro": "A plataforma expõe intencionalmente dois caminhos de execução para que o time valide lógica localmente e promova a mesma semântica para o runtime enterprise.",
+        "mode1Label": "Modo 1",
+        "mode1Title": "Modo Lakehouse Local (Determinístico)",
+        "mode1Body": "Executa com orquestração local, camadas medallion em Delta e janelas fixas de amostra. É otimizado para reprodutibilidade, análise de causa raiz e demonstração técnica confiável.",
+        "mode2Label": "Modo 2",
+        "mode2Title": "Modo Stack Enterprise (Governado)",
+        "mode2Body": "Executa em serviços gerenciados enterprise com fronteiras de IAM, catálogo/governança centralizado e observabilidade por time. É otimizado para compliance, escala e operação controlada.",
+        "tradeoff": "Trade-off: o Modo 1 prioriza depuração determinística e velocidade de onboarding; o Modo 2 prioriza controles de governança, segregação de segurança e confiabilidade de longa duração. Contratos compartilhados evitam drift comportamental entre modos."
       },
-      "caseStudiesCta": "Ver todos os cases"
+      "governance": {
+        "title": "Governança e Contratos de Dados",
+        "item1": "Contratos de schema são versionados e validados nas fronteiras de ingestão, evitando propagação silenciosa de type drift.",
+        "item2": "Regras de qualidade são tratadas como gates de release: expectativas reprovadas enviam registros para quarentena e bloqueiam promoção para camadas confiáveis.",
+        "item3": "Ownership de contratos é explícito por camada (Bronze, Silver, Gold), com produtores e consumidores documentados em runbooks/ADRs.",
+        "item4": "Lineage e metadados de execução garantem auditabilidade de cada dataset publicado, incluindo janela, revisão de código e resultado de validação."
+      },
+      "twoModeArchitecture": {
+        "title": "Arquitetura de Dois Modos (Lakehouse Local + Stack Enterprise)",
+        "item1": "O Modo 1 espelha a semântica medallion localmente: Bronze para ingestão bruta, Silver para conformidade validada e Gold para consumo analítico.",
+        "item2": "A promoção para o Modo 2 preserva contratos de modelo e lógica de testes, sem reescrever regras de negócio por ambiente.",
+        "item3": "O modo enterprise adiciona orquestração gerenciada, políticas de segredos/IAM, catálogos governados e isolamento de workload por domínio/time.",
+        "item4": "Um contexto de execução consistente (run_id, janela, status de validação) permite troubleshooting determinístico entre execuções locais e enterprise."
+      },
+      "observability": {
+        "title": "Observabilidade e Confiabilidade",
+        "item1": "Saúde dos pipelines é monitorada por SLIs de frescor, volume e qualidade com alertas por limiar vinculados a ownership operacional.",
+        "item2": "Tratamento de falhas é explícito: retries para falhas transitórias, quarentena para dados inválidos e replay para recuperação determinística.",
+        "item3": "Dashboards combinam métricas de plataforma (latência, throughput) com métricas de produto de dados (taxa de aprovação de contrato, null ratio, deltas de drift).",
+        "item4": "Procedimentos de runbook padronizam a resposta a incidentes, reduzindo MTTR e evitando recuperação ad-hoc sob pressão."
+      },
+      "cicd": {
+        "title": "CI/CD e Quality Gates",
+        "item1": "CI valida formatação, checks estáticos, testes unitários e transformações focadas em contrato antes de promover qualquer artefato.",
+        "item2": "Testes de dados (dbt + suítes de expectativas) rodam como gates mandatórios e falham o pipeline quando critérios contratuais são violados.",
+        "item3": "Promoção de artefatos é orientada a estágios com aprovações explícitas, preservando rastreabilidade do commit até a janela executada.",
+        "item4": "A disciplina de release prioriza resultado determinístico sobre velocidade, reduzindo custo de rollback em contextos regulados ou de alto impacto."
+      },
+      "adrs": {
+        "title": "Decisões Arquiteturais (ADRs)",
+        "item1": "ADR-001: Adotar camadas medallion para impor fronteiras progressivas de confiança e simplificar contratos de consumo downstream.",
+        "item2": "ADR-002: Manter um modo local determinístico para reduzir feedback loop e garantir evidência reproduzível de engenharia.",
+        "item3": "ADR-003: Codificar qualidade de dados como contratos executáveis, e não como documentação opcional.",
+        "item4": "ADR-004: Padronizar metadados de execução e captura de lineage para aumentar auditabilidade e análise de incidentes entre times."
+      },
+      "reproducibility": {
+        "title": "Comandos de Reprodutibilidade",
+        "intro": "A sequência abaixo é usada para preparar dependências, executar janelas determinísticas e validar gates contratuais ponta a ponta.",
+        "note": "No modo enterprise, os mesmos passos lógicos são executados via orquestração gerenciada, preservando paridade contratual com as execuções locais."
+      },
+      "recruiterProof": {
+        "title": "Seção de Prova para Recrutadores",
+        "item1": "Repositório público com caminhos executáveis de pipeline e documentação operacional para verificação independente.",
+        "item2": "Evidência de raciocínio arquitetural por ADRs, fronteiras de governança e definição de quality gates.",
+        "item3": "Articulação clara de trade-offs entre entrega local determinística e restrições de produção enterprise.",
+        "item4": "Artefatos mensuráveis (lineage, checks de qualidade, metadados de execução) prontos para deep dive técnico em entrevistas."
+      }
     },
     "crmSaas": {
       "eyebrow": "// case de engenharia",
