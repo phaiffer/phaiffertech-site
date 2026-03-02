@@ -48,7 +48,8 @@ export default function Home() {
               {/* Section Header */}
               <div className="sticky top-28">
                 <p className="text-[10px] font-bold tracking-[0.3em] text-brand-cyan uppercase">
-                  // {section.id}
+                  {"// "}
+                  {section.id}
                 </p>
                 <h2 className="mt-4 text-4xl font-extrabold tracking-tight md:text-5xl">
                   {section.title}
