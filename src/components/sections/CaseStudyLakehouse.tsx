@@ -37,8 +37,8 @@ make inspect
 make demo
 python orchestration/local/run_pipeline.py run-backfill --from 2024-01 --to 2024-02`;
 
-const repositoryUrl = "https://github.com/phaiffertech/nyc-tlc-lakehouse";
-const runbookUrl = "https://github.com/phaiffertech/nyc-tlc-lakehouse/blob/main/docs/runbook.md";
+const repositoryUrl = "https://github.com/phaiffer/nyc-tlc-lakehouse";
+const runbookUrl = "https://github.com/phaiffer/nyc-tlc-lakehouse/blob/main/docs/runbook.md";
 
 export function CaseStudyLakehouse() {
   return (
