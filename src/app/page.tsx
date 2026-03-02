@@ -1,5 +1,6 @@
 import { Navbar } from "@/components/sections/Navbar";
 import { Hero } from "@/components/sections/Hero";
+import { CaseStudyLakehouse } from "@/components/sections/CaseStudyLakehouse";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 
@@ -38,6 +39,7 @@ export default function Home() {
     <main className="bg-brand-navy">
       <Navbar />
       <Hero />
+      <CaseStudyLakehouse />
       
       {/* Iterate through sections with improved information density */}
       {sections.map((section) => (

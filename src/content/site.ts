@@ -31,6 +31,7 @@ export const site = {
   ],
   nav: [
     { href: "#inicio", label: "Início" },
+    { href: "#lakehouse", label: "Lakehouse" },
     { href: "#expertise", label: "Expertise" },
     { href: "#stack", label: "Stack" },
     { href: "#carreira", label: "Carreira" },
