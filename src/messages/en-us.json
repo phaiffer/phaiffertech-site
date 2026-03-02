@@ -62,7 +62,19 @@
       }
     },
     "backToTop": "Back to top",
-    "emailCta": "contact@phaiffertech.com"
+    "emailCta": "contact@phaiffertech.com",
+    "engineering": {
+      "eyebrow": "// engineering",
+      "title": "Engineering Flagship",
+      "subtitle": "Public architecture evidence connecting data engineering execution with cloud governance, quality gates, and operational reliability.",
+      "allCasesCta": "Go to case studies",
+      "card": {
+        "title": "Enterprise Industrial Data Platform",
+        "summary": "Flagship architecture case across Mode 1 and Mode 2, covering contracts, governance, observability, and measurable delivery outcomes.",
+        "engineeringCta": "Open engineering architecture",
+        "caseStudyCta": "Open KPI case study"
+      }
+    }
   },
   "lakehouse": {
     "eyebrow": "// case study",

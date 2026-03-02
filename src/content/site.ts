@@ -7,9 +7,9 @@ export const site = {
   navigation: [
     { key: "home", path: "" },
     { key: "engineering", path: "/engineering" },
+    { key: "caseStudies", path: "/case-studies" },
     { key: "services", path: "/services" },
     { key: "products", path: "/products" },
-    { key: "caseStudies", path: "/case-studies" },
     { key: "contact", path: "/contact" },
   ] as const,
 };

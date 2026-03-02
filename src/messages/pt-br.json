@@ -62,7 +62,19 @@
       }
     },
     "backToTop": "Voltar ao topo",
-    "emailCta": "contact@phaiffertech.com"
+    "emailCta": "contact@phaiffertech.com",
+    "engineering": {
+      "eyebrow": "// engenharia",
+      "title": "Flagship de Engenharia",
+      "subtitle": "Evidência pública de arquitetura conectando execução de engenharia de dados com governança cloud, quality gates e confiabilidade operacional.",
+      "allCasesCta": "Ir para estudos de caso",
+      "card": {
+        "title": "Enterprise Industrial Data Platform",
+        "summary": "Case flagship de arquitetura entre Modo 1 e Modo 2, cobrindo contratos, governança, observabilidade e resultados mensuráveis de entrega.",
+        "engineeringCta": "Abrir arquitetura de engenharia",
+        "caseStudyCta": "Abrir case com KPIs"
+      }
+    }
   },
   "lakehouse": {
     "eyebrow": "// case study",

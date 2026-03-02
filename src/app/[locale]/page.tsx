@@ -1,4 +1,5 @@
-import { useTranslations } from "next-intl";
+import Link from "next/link";
+import { useLocale, useTranslations } from "next-intl";
 import { Navbar } from "@/components/sections/Navbar";
 import { Hero } from "@/components/sections/Hero";
 import { CaseStudyLakehouse } from "@/components/sections/CaseStudyLakehouse";
@@ -13,6 +14,7 @@ type HomeSection = {
 };
 
 export default function LocalizedHomePage() {
+  const locale = useLocale();
   const t = useTranslations("home");
 
   const sections: HomeSection[] = [
@@ -68,6 +70,44 @@ export default function LocalizedHomePage() {
       <Navbar />
       <Hero />
       <CaseStudyLakehouse />
+
+      <section id="engineering" className="border-t border-white/5 py-20 lg:py-28">
+        <Container>
+          <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
+            <div className="sticky top-28">
+              <p className="text-[10px] font-bold tracking-[0.3em] text-brand-cyan uppercase">{t("engineering.eyebrow")}</p>
+              <h2 className="mt-4 text-4xl font-extrabold tracking-tight md:text-5xl">{t("engineering.title")}</h2>
+              <p className="mt-6 text-base leading-relaxed text-ui-muted">{t("engineering.subtitle")}</p>
+              <Link
+                href={`/${locale}/case-studies`}
+                className="mt-8 inline-flex text-sm font-semibold tracking-[0.16em] text-brand-cyan uppercase transition-colors hover:text-white"
+              >
+                {t("engineering.allCasesCta")}
+              </Link>
+            </div>
+
+            <article className="rounded-[var(--radius-xl)] border border-white/10 bg-white/[0.02] p-6">
+              <h3 className="text-2xl font-bold tracking-tight">{t("engineering.card.title")}</h3>
+              <p className="mt-4 text-sm leading-relaxed text-ui-muted">{t("engineering.card.summary")}</p>
+
+              <div className="mt-8 flex flex-wrap gap-4">
+                <Link
+                  href={`/${locale}/engineering/enterprise-data-platform`}
+                  className="rounded-[var(--radius-xl)] border border-white/10 px-5 py-3 text-sm font-semibold text-ui-fg transition-colors hover:border-brand-cyan"
+                >
+                  {t("engineering.card.engineeringCta")}
+                </Link>
+                <Link
+                  href={`/${locale}/case-studies/enterprise-data-platform`}
+                  className="rounded-[var(--radius-xl)] border border-brand-cyan/40 px-5 py-3 text-sm font-semibold text-brand-cyan transition-colors hover:text-white"
+                >
+                  {t("engineering.card.caseStudyCta")}
+                </Link>
+              </div>
+            </article>
+          </div>
+        </Container>
+      </section>
 
       {sections.map((section) => (
         <section key={section.id} id={section.id} className="border-t border-white/5 py-20 lg:py-28">
