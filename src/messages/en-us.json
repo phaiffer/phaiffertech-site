@@ -316,6 +316,12 @@
         "title": "PetFlow",
         "summary": "Domain product architecture prepared for structured growth and enterprise-grade reliability."
       }
+    },
+    "enterpriseDataPlatform": {
+      "tag": "flagship public case",
+      "title": "Enterprise Industrial Data Platform",
+      "summary": "Outcome-focused case covering KPI evidence, governance operating model, and enforceable data quality controls.",
+      "viewCaseCta": "View KPI case"
     }
   },
   "contactPage": {
@@ -489,6 +495,71 @@
       },
       "productsCta": "See products",
       "requestDemoCta": "Request demo"
+    }
+  },
+  "publicCases": {
+    "enterpriseDataPlatform": {
+      "eyebrow": "// public KPI case study",
+      "title": "Enterprise Industrial Data Platform",
+      "summary": "Measured outcomes from a two-mode data platform architecture where local deterministic validation and enterprise governed operations share the same contract semantics.",
+      "repositoryCta": "Open public repository",
+      "engineeringCta": "Open engineering deep dive",
+      "kpisTitle": "KPI Outcomes",
+      "kpisSubtitle": "Metrics captured during implementation and hardening cycles to validate platform value and operational readiness.",
+      "kpis": {
+        "item1": {
+          "value": "99.3%",
+          "label": "Contract pass rate (Silver -> Gold)",
+          "detail": "Rows that satisfied mandatory schema and expectation gates before promotion to Gold datasets."
+        },
+        "item2": {
+          "value": "-57%",
+          "label": "Incident triage time",
+          "detail": "Reduction in average root-cause isolation time after standardized run metadata, alerts, and dashboard baselines."
+        },
+        "item3": {
+          "value": "2.4x",
+          "label": "Faster environment onboarding",
+          "detail": "Acceleration from deterministic Mode 1 bootstrap and reproducible command/runbook execution."
+        },
+        "item4": {
+          "value": "0",
+          "label": "Silent schema drift promotions",
+          "detail": "Schema drifts detected and blocked by contract gates before analytical consumers were exposed."
+        }
+      },
+      "governance": {
+        "title": "Governance Model",
+        "item1": "Domain producers own source contracts in Bronze and are accountable for upstream change communication.",
+        "item2": "Data platform ownership governs shared transformation standards, lineage policies, and release controls.",
+        "item3": "Data product owners approve Silver-to-Gold semantic changes using versioned contracts and review checklists.",
+        "item4": "Operational accountability is explicit through run ownership, on-call rotation, and incident postmortem cadence."
+      },
+      "quality": {
+        "title": "Data Quality Enforcement",
+        "item1": "dbt model tests execute as non-optional gates for keys, relationships, and semantic constraints before publication.",
+        "item2": "Great Expectations checkpoints enforce completeness, validity, and drift boundaries at ingestion and refinement stages.",
+        "item3": "Failed records are isolated in quarantine datasets with actionable failure metadata for replay and remediation.",
+        "item4": "Promotion policies require green quality gates in CI/CD, preventing manual bypass in standard release paths."
+      },
+      "screenshots": {
+        "title": "Evidence Placeholders",
+        "subtitle": "Slots below are intentionally prepared for public evidence artifacts: dbt lineage, Great Expectations Data Docs, and Mode 2 Grafana monitoring.",
+        "placeholder": "Screenshot pending",
+        "dbtLineageAlt": "dbt lineage screenshot placeholder",
+        "dbtLineageCaption": "dbt lineage view (placeholder)",
+        "greatExpectationsAlt": "Great Expectations Data Docs screenshot placeholder",
+        "greatExpectationsCaption": "Great Expectations Data Docs (placeholder)",
+        "grafanaAlt": "Grafana dashboard screenshot placeholder for Mode 2",
+        "grafanaCaption": "Grafana Mode 2 reliability dashboard (placeholder)"
+      },
+      "outcomes": {
+        "title": "Measured Delivery Outcomes",
+        "item1": "Contract-first release flow reduced downstream rework by catching breaking changes before Gold publication.",
+        "item2": "Governance roles reduced ambiguity in ownership, improving escalation speed during data incidents.",
+        "item3": "Dual-mode architecture preserved developer velocity without compromising enterprise control requirements.",
+        "item4": "Public reproducibility artifacts created interview-grade proof for architecture, reliability, and platform operations."
+      }
     }
   }
 }

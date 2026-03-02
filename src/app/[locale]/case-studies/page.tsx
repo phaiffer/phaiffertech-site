@@ -46,36 +46,63 @@ export default async function CaseStudiesPage({ params }: Props) {
 
       <section className="py-16 lg:py-20">
         <Container>
-          <article className="rounded-[var(--radius-xl)] border border-white/10 bg-white/[0.02] p-6">
-            <p className="text-xs font-bold tracking-[0.22em] text-brand-cyan uppercase">{t("lakehouse.tag")}</p>
-            <h2 className="mt-3 text-3xl font-bold tracking-tight">{t("lakehouse.title")}</h2>
-            <p className="mt-4 max-w-3xl text-sm leading-relaxed text-ui-muted">{t("lakehouse.summary")}</p>
+          <div className="grid gap-6 lg:grid-cols-2">
+            <article className="rounded-[var(--radius-xl)] border border-white/10 bg-white/[0.02] p-6">
+              <p className="text-xs font-bold tracking-[0.22em] text-brand-cyan uppercase">{t("lakehouse.tag")}</p>
+              <h2 className="mt-3 text-3xl font-bold tracking-tight">{t("lakehouse.title")}</h2>
+              <p className="mt-4 max-w-3xl text-sm leading-relaxed text-ui-muted">{t("lakehouse.summary")}</p>
 
-            <div className="mt-6 flex flex-wrap gap-3">
-              <a
-                href={repositoryUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="rounded-[var(--radius-xl)] border border-white/10 px-4 py-2 text-sm font-semibold text-ui-fg transition-colors hover:border-brand-cyan"
-              >
-                {t("lakehouse.repositoryCta")}
-              </a>
-              <a
-                href={runbookUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="rounded-[var(--radius-xl)] border border-white/10 px-4 py-2 text-sm font-semibold text-ui-fg transition-colors hover:border-brand-cyan"
-              >
-                {t("lakehouse.runbookCta")}
-              </a>
-              <Link
-                href={`/${locale}`}
-                className="rounded-[var(--radius-xl)] border border-brand-cyan/40 px-4 py-2 text-sm font-semibold text-brand-cyan transition-colors hover:text-white"
-              >
-                {t("lakehouse.homeCta")}
-              </Link>
-            </div>
-          </article>
+              <div className="mt-6 flex flex-wrap gap-3">
+                <a
+                  href={repositoryUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="rounded-[var(--radius-xl)] border border-white/10 px-4 py-2 text-sm font-semibold text-ui-fg transition-colors hover:border-brand-cyan"
+                >
+                  {t("lakehouse.repositoryCta")}
+                </a>
+                <a
+                  href={runbookUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="rounded-[var(--radius-xl)] border border-white/10 px-4 py-2 text-sm font-semibold text-ui-fg transition-colors hover:border-brand-cyan"
+                >
+                  {t("lakehouse.runbookCta")}
+                </a>
+                <Link
+                  href={`/${locale}`}
+                  className="rounded-[var(--radius-xl)] border border-brand-cyan/40 px-4 py-2 text-sm font-semibold text-brand-cyan transition-colors hover:text-white"
+                >
+                  {t("lakehouse.homeCta")}
+                </Link>
+              </div>
+            </article>
+
+            <article className="rounded-[var(--radius-xl)] border border-white/10 bg-white/[0.02] p-6">
+              <p className="text-xs font-bold tracking-[0.22em] text-brand-cyan uppercase">
+                {t("enterpriseDataPlatform.tag")}
+              </p>
+              <h2 className="mt-3 text-3xl font-bold tracking-tight">{t("enterpriseDataPlatform.title")}</h2>
+              <p className="mt-4 max-w-3xl text-sm leading-relaxed text-ui-muted">{t("enterpriseDataPlatform.summary")}</p>
+
+              <div className="mt-6 flex flex-wrap gap-3">
+                <Link
+                  href={`/${locale}/case-studies/enterprise-data-platform`}
+                  className="rounded-[var(--radius-xl)] border border-brand-cyan/40 px-4 py-2 text-sm font-semibold text-brand-cyan transition-colors hover:text-white"
+                >
+                  {t("enterpriseDataPlatform.viewCaseCta")}
+                </Link>
+                <a
+                  href={repositoryUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="rounded-[var(--radius-xl)] border border-white/10 px-4 py-2 text-sm font-semibold text-ui-fg transition-colors hover:border-brand-cyan"
+                >
+                  {t("lakehouse.repositoryCta")}
+                </a>
+              </div>
+            </article>
+          </div>
 
           <div className="mt-10">
             <h2 className="text-3xl font-bold tracking-tight">{t("privateSection.title")}</h2>

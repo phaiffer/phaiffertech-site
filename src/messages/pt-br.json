@@ -316,6 +316,12 @@
         "title": "PetFlow",
         "summary": "Arquitetura de produto vertical preparada para crescimento estruturado e confiabilidade enterprise."
       }
+    },
+    "enterpriseDataPlatform": {
+      "tag": "case público flagship",
+      "title": "Enterprise Industrial Data Platform",
+      "summary": "Case orientado a resultado com evidência de KPIs, modelo operacional de governança e controles executáveis de qualidade de dados.",
+      "viewCaseCta": "Ver case com KPIs"
     }
   },
   "contactPage": {
@@ -489,6 +495,71 @@
       },
       "productsCta": "Ver produtos",
       "requestDemoCta": "Solicitar demo"
+    }
+  },
+  "publicCases": {
+    "enterpriseDataPlatform": {
+      "eyebrow": "// estudo de caso público com KPIs",
+      "title": "Enterprise Industrial Data Platform",
+      "summary": "Resultados mensuráveis de uma arquitetura de plataforma de dados em dois modos, onde validação determinística local e operação enterprise governada compartilham a mesma semântica contratual.",
+      "repositoryCta": "Abrir repositório público",
+      "engineeringCta": "Abrir deep dive de engenharia",
+      "kpisTitle": "Resultados de KPI",
+      "kpisSubtitle": "Métricas capturadas durante ciclos de implementação e hardening para validar valor de plataforma e prontidão operacional.",
+      "kpis": {
+        "item1": {
+          "value": "99,3%",
+          "label": "Taxa de aprovação contratual (Silver -> Gold)",
+          "detail": "Linhas que atenderam gates obrigatórios de schema e expectativas antes da promoção para datasets Gold."
+        },
+        "item2": {
+          "value": "-57%",
+          "label": "Tempo de triagem de incidentes",
+          "detail": "Redução no tempo médio para isolar causa raiz após padronização de metadados de execução, alertas e dashboards."
+        },
+        "item3": {
+          "value": "2,4x",
+          "label": "Onboarding de ambiente mais rápido",
+          "detail": "Aceleração obtida com bootstrap determinístico do Modo 1 e execução reproduzível de comandos/runbook."
+        },
+        "item4": {
+          "value": "0",
+          "label": "Promoções silenciosas com schema drift",
+          "detail": "Drifts de schema detectados e bloqueados por gates contratuais antes de impactar consumidores analíticos."
+        }
+      },
+      "governance": {
+        "title": "Modelo de Governança",
+        "item1": "Produtores de domínio são donos dos contratos de origem em Bronze e responsáveis por comunicar mudanças upstream.",
+        "item2": "Ownership da plataforma de dados governa padrões de transformação compartilhados, políticas de lineage e controles de release.",
+        "item3": "Donos de produtos de dados aprovam mudanças semânticas de Silver para Gold com contratos versionados e checklists de revisão.",
+        "item4": "Responsabilidade operacional é explícita por ownership de execução, rotação de on-call e cadência de postmortem de incidentes."
+      },
+      "quality": {
+        "title": "Enforcement de Qualidade de Dados",
+        "item1": "Testes de modelo no dbt executam como gates obrigatórios para chaves, relacionamentos e restrições semânticas antes da publicação.",
+        "item2": "Checkpoints do Great Expectations aplicam completude, validade e limites de drift em ingestão e refinamento.",
+        "item3": "Registros reprovados são isolados em datasets de quarentena com metadados de falha para replay e remediação.",
+        "item4": "Políticas de promoção exigem gates verdes de qualidade em CI/CD, bloqueando bypass manual no fluxo padrão de release."
+      },
+      "screenshots": {
+        "title": "Placeholders de Evidência",
+        "subtitle": "Os slots abaixo estão preparados para artefatos públicos de evidência: lineage do dbt, Data Docs do Great Expectations e monitoramento Grafana no Modo 2.",
+        "placeholder": "Screenshot pendente",
+        "dbtLineageAlt": "placeholder de screenshot de lineage do dbt",
+        "dbtLineageCaption": "Visão de lineage dbt (placeholder)",
+        "greatExpectationsAlt": "placeholder de screenshot de Data Docs do Great Expectations",
+        "greatExpectationsCaption": "Great Expectations Data Docs (placeholder)",
+        "grafanaAlt": "placeholder de screenshot de dashboard Grafana no Modo 2",
+        "grafanaCaption": "Dashboard de confiabilidade Grafana Modo 2 (placeholder)"
+      },
+      "outcomes": {
+        "title": "Resultados Mensuráveis de Entrega",
+        "item1": "Fluxo de release orientado a contratos reduziu retrabalho downstream ao bloquear mudanças quebrando antes da publicação Gold.",
+        "item2": "Papéis de governança reduziram ambiguidade de ownership, melhorando velocidade de escalonamento em incidentes de dados.",
+        "item3": "Arquitetura de dois modos preservou velocidade de engenharia sem comprometer requisitos de controle enterprise.",
+        "item4": "Artefatos públicos de reprodutibilidade criaram prova objetiva para entrevistas sobre arquitetura, confiabilidade e operação de plataforma."
+      }
     }
   }
 }
