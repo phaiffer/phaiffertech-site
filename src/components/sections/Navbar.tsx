@@ -29,11 +29,13 @@ export function Navbar() {
 
   const targetLocale = locale === "pt-br" ? "en-us" : "pt-br";
   const localeHref = switchLocalePath(pathname, targetLocale);
+  const homeHref = withLocale(locale, "");
+  const lakehouseHref = pathname === homeHref ? "#lakehouse" : `${homeHref}#lakehouse`;
 
   return (
     <header className="sticky top-0 z-50 border-b border-white/10 bg-brand-navy/80 backdrop-blur-xl">
       <Container className="flex h-28 items-center justify-between">
-        <Link href={withLocale(locale, "")} className="group flex items-center gap-3">
+        <Link href={homeHref} className="group flex items-center gap-3">
           <div className="relative h-20 w-20 transition-transform group-hover:scale-105 md:h-24 md:w-24">
             <Image src="/logo.png" alt={site.brand.name} fill className="object-contain" priority />
           </div>
@@ -56,6 +58,13 @@ export function Navbar() {
               {t(`nav.${item.key as NavItemKey}` as const).toUpperCase()}
             </Link>
           ))}
+
+          <Link
+            href={lakehouseHref}
+            className="text-[11px] font-bold tracking-[0.22em] text-ui-muted transition-colors hover:text-brand-cyan"
+          >
+            {t("nav.lakehouse").toUpperCase()}
+          </Link>
 
           <Link
             href={localeHref}
