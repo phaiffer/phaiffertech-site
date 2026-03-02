@@ -85,5 +85,210 @@
     "iot": "Arquitetura IoT corporativa orientada a eventos com isolamento de tenants e operação em alta disponibilidade.",
     "crm": "Plataforma CRM pronta para SaaS com modelo multi-tenant e base RBAC para hardening empresarial.",
     "petflow": "Arquitetura de produto vertical com foco em confiabilidade, observabilidade e evolução segura para nível enterprise."
+  },
+  "engineeringPage": {
+    "eyebrow": "// engenharia",
+    "title": "Plataforma de Engenharia",
+    "subtitle": "Cases técnicos profundos desenhados para conversas de contratação internacional e avaliação de arquitetura.",
+    "hiringNote": "Cada case apresenta decisões arquiteturais, restrições de entrega e resultados mensuráveis alinhados a padrões enterprise.",
+    "readCase": "Ler case",
+    "cards": {
+      "iotPlatform": {
+        "title": "Plataforma IoT"
+      },
+      "enterpriseDataPlatform": {
+        "title": "Plataforma de Dados Enterprise",
+        "summary": "Arquitetura lakehouse pública com pipelines reproduzíveis, contratos de dados e rastreabilidade operacional por runbook."
+      },
+      "crmSaas": {
+        "title": "Plataforma CRM SaaS"
+      },
+      "petflow": {
+        "title": "Plataforma de Produto PetFlow"
+      }
+    }
+  },
+  "engineeringCases": {
+    "iotPlatform": {
+      "eyebrow": "// case de engenharia",
+      "title": "Plataforma IoT",
+      "summary": "Arquitetura enterprise para ingestão de telemetria, alertas em tempo real e processamento resiliente com isolamento por tenant.",
+      "architecture": {
+        "title": "Destaques de Arquitetura",
+        "item1": "Pipeline orientado a eventos com fronteiras rígidas de tenant.",
+        "item2": "Modelo de armazenamento temporal para dashboards operacionais de baixa latência.",
+        "item3": "Processamento tolerante a falhas com replay para recuperação determinística.",
+        "item4": "Camada de APIs preparada para integrações corporativas seguras."
+      },
+      "delivery": {
+        "title": "Foco de Entrega",
+        "item1": "Base escalável para rollout multi-site.",
+        "item2": "Playbooks operacionais para resposta previsível a incidentes.",
+        "item3": "Documentação arquitetural pronta para governança."
+      },
+      "caseStudiesCta": "Ver todos os cases"
+    },
+    "enterpriseDataPlatform": {
+      "eyebrow": "// case público de engenharia",
+      "title": "Plataforma de Dados Enterprise",
+      "summary": "Plataforma de referência NYC TLC Lakehouse que comprova analytics reproduzível e operação confiável de pipelines.",
+      "repositoryCta": "Abrir repositório",
+      "runbookCta": "Abrir runbook",
+      "architecture": {
+        "title": "Destaques de Arquitetura",
+        "item1": "Modelo Medallion com responsabilidades explícitas em Bronze, Silver e Gold.",
+        "item2": "Contratos de schema e qualidade com fluxo de quarentena para registros inválidos.",
+        "item3": "Orquestração local determinística para demos reproduzíveis e validação.",
+        "item4": "Metadados operacionais para rastrear janelas e saídas de execução."
+      },
+      "delivery": {
+        "title": "Foco de Entrega",
+        "item1": "Demonstração pública de padrões de engenharia de dados ponta a ponta.",
+        "item2": "Runbook operacional reduzindo tempo de onboarding e troubleshooting.",
+        "item3": "Métricas prontas para evidência em entrevistas técnicas e propostas de consultoria."
+      },
+      "caseStudiesCta": "Ver todos os cases"
+    },
+    "crmSaas": {
+      "eyebrow": "// case de engenharia",
+      "title": "Plataforma CRM SaaS",
+      "summary": "Plataforma CRM orientada a SaaS com fundações multi-tenant e caminho de expansão para nível enterprise.",
+      "architecture": {
+        "title": "Destaques de Arquitetura",
+        "item1": "Modelo de domínio tenant-aware com base RBAC.",
+        "item2": "Fronteiras modulares de serviço preparadas para productização.",
+        "item3": "Estratégia de eventos operacionais e trilha de auditoria para compliance.",
+        "item4": "Contratos de API estruturados para integrações com parceiros."
+      },
+      "delivery": {
+        "title": "Foco de Entrega",
+        "item1": "Roadmap de hardening para atingir critérios enterprise de produção.",
+        "item2": "Plano de instrumentação para métricas de SLA e suporte.",
+        "item3": "Caminho de evolução de implementação privada para produto empacotado."
+      },
+      "productsCta": "Ver produtos",
+      "requestDemoCta": "Solicitar demo"
+    },
+    "petflow": {
+      "eyebrow": "// case de engenharia",
+      "title": "Plataforma de Produto PetFlow",
+      "summary": "Arquitetura de plataforma orientada ao domínio preparada para evoluir de produto para operação enterprise.",
+      "architecture": {
+        "title": "Destaques de Arquitetura",
+        "item1": "Fronteiras de domínio e interfaces de serviço extensíveis.",
+        "item2": "Modelo de dados preparado para crescimento, rastreabilidade e analytics.",
+        "item3": "Ganchos de observabilidade para saúde operacional e comportamento de features.",
+        "item4": "Baseline de segurança preparado para integrações externas."
+      },
+      "delivery": {
+        "title": "Foco de Entrega",
+        "item1": "Estratégia incremental de hardening ligada aos marcos de produto.",
+        "item2": "Disciplina de release com quality gates e visibilidade de mudanças.",
+        "item3": "Caminho de escalabilidade para cenários de adoção enterprise."
+      },
+      "productsCta": "Ver produtos",
+      "requestDemoCta": "Solicitar demo"
+    }
+  },
+  "servicesPage": {
+    "eyebrow": "// serviços",
+    "title": "Serviços de Consultoria",
+    "subtitle": "Modelos de atuação focados em modernização de arquitetura, plataformas de dados e melhoria de confiabilidade.",
+    "contactCta": "Iniciar conversa de consultoria",
+    "offerings": {
+      "cloudDataArchitecture": {
+        "title": "Cloud e Arquitetura de Dados",
+        "description": "Arquiteturas de referência, sequenciamento de migração e desenho de modelo operacional para adoção cloud-native."
+      },
+      "saasHardening": {
+        "title": "SaaS Hardening",
+        "description": "Resiliência multi-tenant, fronteiras de acesso, estratégia de rollout e hardening para produção."
+      },
+      "observability": {
+        "title": "Observabilidade",
+        "description": "Padrões de telemetria, dashboards, alertas acionáveis e fluxo de resposta a incidentes para sustentar disponibilidade."
+      },
+      "securityByDesign": {
+        "title": "Security-by-design",
+        "description": "Decisões arquiteturais orientadas a ameaças, controles de menor privilégio e práticas de segurança auditáveis."
+      },
+      "dataPlatforms": {
+        "title": "Plataformas de Dados",
+        "description": "Engenharia de plataformas batch e streaming com contratos de qualidade, governança e reprodutibilidade."
+      }
+    }
+  },
+  "productsPage": {
+    "eyebrow": "// produtos",
+    "title": "Portfólio de Produtos",
+    "subtitle": "Produtos de plataforma construídos em contextos reais de entrega e preparados para demonstração enterprise.",
+    "requestDemo": "Solicitar demo",
+    "cards": {
+      "iot": {
+        "title": "Plataforma IoT",
+        "summary": "Plataforma enterprise privada para telemetria, visibilidade operacional e processamento de eventos em escala."
+      },
+      "crm": {
+        "title": "Plataforma CRM",
+        "summary": "Plataforma CRM privada pronta para SaaS com isolamento de tenants e evolução para governança enterprise."
+      },
+      "petflow": {
+        "title": "PetFlow",
+        "summary": "Plataforma vertical de produto com base arquitetural robusta e roadmap para nível enterprise."
+      }
+    }
+  },
+  "caseStudiesPage": {
+    "eyebrow": "// cases",
+    "title": "Estudos de Caso",
+    "subtitle": "Narrativas de projetos públicos e privados que demonstram profundidade arquitetural, rigor operacional e visão de produto.",
+    "lakehouse": {
+      "tag": "repositório público",
+      "title": "NYC TLC Lakehouse",
+      "summary": "Case público com runbook reproduzível, contratos de dados, estrutura medallion e demonstração de KPIs.",
+      "repositoryCta": "Repositório",
+      "runbookCta": "Runbook",
+      "homeCta": "Ver na home"
+    },
+    "privateSection": {
+      "title": "Projetos Enterprise Privados",
+      "subtitle": "Narrativas de arquitetura e operação disponíveis sem divulgação de código-fonte, com foco em resultados enterprise.",
+      "viewCase": "Ver página do case"
+    },
+    "privateCards": {
+      "iot": {
+        "title": "Sistema IoT",
+        "summary": "Arquitetura orientada a eventos com HA e observabilidade para operações IoT corporativas."
+      },
+      "crm": {
+        "title": "Plataforma CRM",
+        "summary": "Base CRM SaaS com isolamento por tenant, modelo RBAC e roadmap de hardening."
+      },
+      "petflow": {
+        "title": "PetFlow",
+        "summary": "Arquitetura de produto vertical preparada para crescimento estruturado e confiabilidade enterprise."
+      }
+    }
+  },
+  "contactPage": {
+    "eyebrow": "// contato",
+    "title": "Contato",
+    "subtitle": "Compartilhe seu desafio de arquitetura, necessidade de consultoria ou interesse em produto para receber uma resposta técnica objetiva.",
+    "requestedDemo": "Demo solicitada:",
+    "directContact": {
+      "title": "Contato direto",
+      "description": "Use o email para compartilhar contexto, restrições e prazo. A partir disso, agendamos uma conversa técnica."
+    },
+    "pathways": {
+      "title": "Explore antes",
+      "description": "Se preferir, revise serviços ou produtos antes de iniciar a conversa.",
+      "servicesCta": "Ver serviços",
+      "productsCta": "Ver produtos"
+    },
+    "products": {
+      "iot": "Plataforma IoT",
+      "crm": "Plataforma CRM",
+      "petflow": "PetFlow"
+    }
   }
 }

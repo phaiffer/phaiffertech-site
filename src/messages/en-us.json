@@ -85,5 +85,210 @@
     "iot": "Flagship enterprise IoT architecture with event-driven ingestion, tenant isolation, and high-availability operations.",
     "crm": "SaaS-ready CRM platform with multi-tenant model and RBAC foundation for enterprise hardening.",
     "petflow": "Domain product architecture focused on reliability, observability, and secure growth to enterprise readiness."
+  },
+  "engineeringPage": {
+    "eyebrow": "// engineering",
+    "title": "Engineering Platform",
+    "subtitle": "Deep technical case studies designed for international hiring conversations and architecture-level assessment.",
+    "hiringNote": "Each case presents architecture decisions, delivery constraints, and measurable outcomes aligned with enterprise standards.",
+    "readCase": "Read case",
+    "cards": {
+      "iotPlatform": {
+        "title": "IoT Platform"
+      },
+      "enterpriseDataPlatform": {
+        "title": "Enterprise Data Platform",
+        "summary": "Public lakehouse architecture with reproducible pipelines, contract enforcement, and operational runbook traceability."
+      },
+      "crmSaas": {
+        "title": "CRM SaaS Platform"
+      },
+      "petflow": {
+        "title": "PetFlow Product Platform"
+      }
+    }
+  },
+  "engineeringCases": {
+    "iotPlatform": {
+      "eyebrow": "// engineering case",
+      "title": "IoT Platform",
+      "summary": "Enterprise architecture for telemetry ingestion, real-time alerting, and resilient tenant-isolated processing.",
+      "architecture": {
+        "title": "Architecture Highlights",
+        "item1": "Event-driven ingestion and processing pipeline with strict tenant boundaries.",
+        "item2": "Timeseries storage and query model designed for low-latency operational dashboards.",
+        "item3": "Fault-tolerant processing with replay support for deterministic incident recovery.",
+        "item4": "API and integration layer prepared for secure enterprise extensions."
+      },
+      "delivery": {
+        "title": "Delivery Focus",
+        "item1": "Scalable foundation for multi-site rollout.",
+        "item2": "Operational playbooks for predictable incident response.",
+        "item3": "Governance-ready architecture documentation."
+      },
+      "caseStudiesCta": "View all case studies"
+    },
+    "enterpriseDataPlatform": {
+      "eyebrow": "// public engineering case",
+      "title": "Enterprise Data Platform",
+      "summary": "NYC TLC Lakehouse reference platform proving reproducible analytics and reliable pipeline operations.",
+      "repositoryCta": "Open repository",
+      "runbookCta": "Open runbook",
+      "architecture": {
+        "title": "Architecture Highlights",
+        "item1": "Medallion data model with explicit Bronze, Silver, and Gold responsibilities.",
+        "item2": "Schema and quality contracts with quarantine flow for invalid records.",
+        "item3": "Deterministic local orchestration for reproducible demos and validation.",
+        "item4": "Operational metadata for traceable run windows and outputs."
+      },
+      "delivery": {
+        "title": "Delivery Focus",
+        "item1": "Public demonstration of end-to-end data engineering standards.",
+        "item2": "Operational runbook reducing onboarding and troubleshooting time.",
+        "item3": "Evidence-ready metrics for architecture interviews and consulting proposals."
+      },
+      "caseStudiesCta": "View all case studies"
+    },
+    "crmSaas": {
+      "eyebrow": "// engineering case",
+      "title": "CRM SaaS Platform",
+      "summary": "SaaS-oriented CRM platform with multi-tenant foundations and enterprise expansion path.",
+      "architecture": {
+        "title": "Architecture Highlights",
+        "item1": "Tenant-aware domain model with role-based access control baseline.",
+        "item2": "Modular service boundaries prepared for productization.",
+        "item3": "Operational events and audit trail strategy for compliance scenarios.",
+        "item4": "Structured API contracts supporting partner integrations."
+      },
+      "delivery": {
+        "title": "Delivery Focus",
+        "item1": "Hardening roadmap to reach enterprise production criteria.",
+        "item2": "Instrumentation plan for SLA and support metrics.",
+        "item3": "Promotion path from private implementation to packaged product."
+      },
+      "productsCta": "See products",
+      "requestDemoCta": "Request demo"
+    },
+    "petflow": {
+      "eyebrow": "// engineering case",
+      "title": "PetFlow Product Platform",
+      "summary": "Domain-focused platform architecture prepared to evolve from product prototype to enterprise operation.",
+      "architecture": {
+        "title": "Architecture Highlights",
+        "item1": "Core domain boundaries and extensible service interfaces.",
+        "item2": "Data model designed for growth, traceability, and analytics enablement.",
+        "item3": "Observability hooks for runtime health and feature behavior.",
+        "item4": "Security baseline prepared for external integrations."
+      },
+      "delivery": {
+        "title": "Delivery Focus",
+        "item1": "Incremental hardening strategy tied to product milestones.",
+        "item2": "Release discipline with quality gates and change visibility.",
+        "item3": "Scalability path for enterprise adoption scenarios."
+      },
+      "productsCta": "See products",
+      "requestDemoCta": "Request demo"
+    }
+  },
+  "servicesPage": {
+    "eyebrow": "// services",
+    "title": "Consulting Services",
+    "subtitle": "Focused engagement models for architecture modernization, data platforms, and reliability improvement.",
+    "contactCta": "Start consulting conversation",
+    "offerings": {
+      "cloudDataArchitecture": {
+        "title": "Cloud and Data Architecture",
+        "description": "Reference architectures, migration sequencing, and platform operating model design for cloud-native adoption."
+      },
+      "saasHardening": {
+        "title": "SaaS Hardening",
+        "description": "Multi-tenant resilience, access control boundaries, rollout strategy, and production-readiness hardening."
+      },
+      "observability": {
+        "title": "Observability",
+        "description": "Telemetry standards, dashboards, actionable alerts, and incident-response workflows for sustained uptime."
+      },
+      "securityByDesign": {
+        "title": "Security-by-design",
+        "description": "Threat-informed architecture decisions, least-privilege controls, and auditable security practices."
+      },
+      "dataPlatforms": {
+        "title": "Data Platforms",
+        "description": "Batch and streaming data platform engineering with quality contracts, governance, and reproducibility."
+      }
+    }
+  },
+  "productsPage": {
+    "eyebrow": "// products",
+    "title": "Product Portfolio",
+    "subtitle": "Platform products developed from real delivery contexts and shaped for enterprise demonstration paths.",
+    "requestDemo": "Request demo",
+    "cards": {
+      "iot": {
+        "title": "IoT Platform",
+        "summary": "Private enterprise platform for telemetry workflows, operations visibility, and scalable event processing."
+      },
+      "crm": {
+        "title": "CRM Platform",
+        "summary": "Private SaaS-ready CRM platform with tenant boundaries and expansion path for enterprise governance."
+      },
+      "petflow": {
+        "title": "PetFlow",
+        "summary": "Vertical product platform with robust architecture baseline and roadmap for enterprise readiness."
+      }
+    }
+  },
+  "caseStudiesPage": {
+    "eyebrow": "// case studies",
+    "title": "Case Studies",
+    "subtitle": "Public and private project narratives showing architecture depth, operational rigor, and product strategy alignment.",
+    "lakehouse": {
+      "tag": "public repository",
+      "title": "NYC TLC Lakehouse",
+      "summary": "Public engineering case with reproducible runbook, data contracts, medallion structure, and live KPI demonstration.",
+      "repositoryCta": "Repository",
+      "runbookCta": "Runbook",
+      "homeCta": "View on homepage"
+    },
+    "privateSection": {
+      "title": "Private Enterprise Projects",
+      "subtitle": "Architecture and operational narratives available without source disclosure, focused on enterprise outcomes.",
+      "viewCase": "View case page"
+    },
+    "privateCards": {
+      "iot": {
+        "title": "IoT System",
+        "summary": "Event-driven architecture with HA and observability designed for enterprise IoT operations."
+      },
+      "crm": {
+        "title": "CRM Platform",
+        "summary": "SaaS CRM foundation with tenant isolation, RBAC model, and hardening roadmap."
+      },
+      "petflow": {
+        "title": "PetFlow",
+        "summary": "Domain product architecture prepared for structured growth and enterprise-grade reliability."
+      }
+    }
+  },
+  "contactPage": {
+    "eyebrow": "// contact",
+    "title": "Contact",
+    "subtitle": "Share your architecture challenge, consulting need, or product interest and get a focused technical response.",
+    "requestedDemo": "Requested demo:",
+    "directContact": {
+      "title": "Direct contact",
+      "description": "Use email to share context, constraints, and timeline. We can schedule a technical call from there."
+    },
+    "pathways": {
+      "title": "Explore first",
+      "description": "If you prefer, review services or products before opening the conversation.",
+      "servicesCta": "See services",
+      "productsCta": "See products"
+    },
+    "products": {
+      "iot": "IoT Platform",
+      "crm": "CRM Platform",
+      "petflow": "PetFlow"
+    }
   }
 }
