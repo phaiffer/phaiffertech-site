@@ -58,7 +58,7 @@ export function Hero() {
           */}
           <motion.div 
             initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 0.6, scale: 1 }}
+            animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1.2, ease: "easeOut" }}
             className="hidden lg:flex justify-end relative"
           >
@@ -67,9 +67,8 @@ export function Hero() {
             
             <div className="relative h-[600px] w-[600px] drop-shadow-[0_0_30px_rgba(14,165,233,0.3)]">
               <Image
-                className="object-contain image-render-auto"
-                style={{ imageRendering: 'smooth' }}
-                src="/logo1.png"
+                className="object-contain"
+                src="/logo.png"
                 alt="Phaiffer Tech High Vis Logo"
                 fill
                 priority
