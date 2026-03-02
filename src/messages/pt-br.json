@@ -290,5 +290,157 @@
       "crm": "Plataforma CRM",
       "petflow": "PetFlow"
     }
+  },
+  "privateCases": {
+    "iot": {
+      "eyebrow": "// case privado enterprise",
+      "title": "Sistema IoT",
+      "privateRepoLabel": "Private enterprise repository (code available on request)",
+      "executiveSummary": {
+        "title": "Resumo Executivo",
+        "body": "Arquitetura flagship para operações com alta carga de telemetria. A plataforma é orientada a eventos, multi-tenant e preparada para ingestão de alto volume com analytics resiliente."
+      },
+      "architecture": {
+        "title": "Destaques de Arquitetura",
+        "item1": "Backbone de eventos centrado em Kafka para ingestão, fan-out e recuperação com replay seguro.",
+        "item2": "TimescaleDB e modelos operacionais de leitura para dashboards de baixa latência.",
+        "item3": "Estratégia de isolamento por tenant em ingestão, processamento e APIs.",
+        "item4": "Interfaces de serviço preparadas para integrações corporativas e expansão de módulos."
+      },
+      "reliability": {
+        "title": "Confiabilidade e Observabilidade",
+        "item1": "Estratégia de SLI e alertas para lag de ingestão, throughput e falhas de processamento.",
+        "item2": "Logs estruturados, tracing distribuído e dashboards para triagem rápida de incidentes.",
+        "item3": "Tratamento de falhas com orquestração de replay e recuperação operacional determinística.",
+        "item4": "Postura de HA com fallback de DR planejado para degradação regional."
+      },
+      "security": {
+        "title": "Postura de Segurança",
+        "item1": "Controles RBAC alinhados a fronteiras de tenant e operação.",
+        "item2": "Estratégia de isolamento de segredos e credenciais para componentes e integrações.",
+        "item3": "Controles de contratos de eventos e APIs para reduzir risco de exposição indevida.",
+        "item4": "Rastreabilidade operacional orientada a auditoria e compliance."
+      },
+      "evidence": {
+        "title": "Evidências",
+        "item1": "Runbooks operacionais cobrindo restart, replay e contenção de incidentes.",
+        "item2": "Dashboards e pacotes de alertas para saúde de ingestão, atividade por tenant e latência.",
+        "item3": "Abordagem documentada de DR/HA com hipóteses de failover e objetivos de recuperação."
+      },
+      "screenshots": {
+        "title": "Slots de Screenshot",
+        "slot1Alt": "Screenshot de visão geral operacional do IoT",
+        "slot1Caption": "Visão operacional",
+        "slot2Alt": "Screenshot de dashboard de observabilidade do IoT",
+        "slot2Caption": "Dashboard de observabilidade",
+        "placeholder": "Screenshot pendente"
+      },
+      "roadmap": {
+        "title": "Roadmap para Nível Enterprise",
+        "body": "Próximos marcos de hardening incluem padronização de CI/CD, expansão de testes automatizados e promotion gates entre ambientes de desenvolvimento, staging e produção."
+      },
+      "productsCta": "Ver produtos",
+      "requestDemoCta": "Solicitar demo"
+    },
+    "crm": {
+      "eyebrow": "// case privado enterprise",
+      "title": "Plataforma CRM",
+      "privateRepoLabel": "Private enterprise repository (code available on request)",
+      "executiveSummary": {
+        "title": "Resumo Executivo",
+        "body": "Plataforma CRM preparada para SaaS com arquitetura tenant-aware e base RBAC, posicionada para hardening de entrega enterprise e evolução controlada de produto."
+      },
+      "architecture": {
+        "title": "Destaques de Arquitetura",
+        "item1": "Modelo de domínio multi-tenant com fronteiras claras entre dados e aplicação.",
+        "item2": "Decomposição modular de serviços para productização e governança de funcionalidades.",
+        "item3": "Modelo de acesso orientado a RBAC preparado para expansão de políticas.",
+        "item4": "Contratos de API prontos para integrações com parceiros e sistemas internos."
+      },
+      "reliability": {
+        "title": "Confiabilidade e Observabilidade",
+        "item1": "Estratégia de instrumentação para uso por tenant, latência de API e gargalos operacionais.",
+        "item2": "Alertas guiados por error budget e fluxo estruturado de incidentes.",
+        "item3": "Cobertura de dashboards para autenticação, onboarding e jornadas críticas do usuário.",
+        "item4": "Runbooks de recuperação para dependências degradadas e rollback de rollout."
+      },
+      "security": {
+        "title": "Postura de Segurança",
+        "item1": "Fronteiras de papéis e permissões mapeadas para responsabilidades de tenant e administração.",
+        "item2": "Controles de dados para fluxos sensíveis de PII e fronteiras de exportação.",
+        "item3": "Controles de autenticação e sessão planejados para aderência a políticas enterprise.",
+        "item4": "Estratégia de trilha de auditoria para ações-chave e operações administrativas."
+      },
+      "evidence": {
+        "title": "Evidências",
+        "item1": "Runbooks de controle de acesso e guias de operação para gestão de tenants.",
+        "item2": "Dashboards de uso e confiabilidade para times de produto e suporte.",
+        "item3": "Notas de desenho DR/HA cobrindo recuperação de estado e continuidade de serviço."
+      },
+      "screenshots": {
+        "title": "Slots de Screenshot",
+        "slot1Alt": "Screenshot de visão geral do workspace CRM",
+        "slot1Caption": "Visão geral do workspace",
+        "slot2Alt": "Screenshot de controles de acesso CRM",
+        "slot2Caption": "Controles de acesso",
+        "placeholder": "Screenshot pendente"
+      },
+      "roadmap": {
+        "title": "Roadmap para Nível Enterprise",
+        "body": "A sequência de hardening prioriza disciplina de CI/CD, ampliação da suíte de testes automatizados e promotion gates com validações de qualidade antes da produção."
+      },
+      "productsCta": "Ver produtos",
+      "requestDemoCta": "Solicitar demo"
+    },
+    "petflow": {
+      "eyebrow": "// case privado enterprise",
+      "title": "PetFlow",
+      "privateRepoLabel": "Private enterprise repository (code available on request)",
+      "executiveSummary": {
+        "title": "Resumo Executivo",
+        "body": "Plataforma de produto orientada a domínio com arquitetura estruturada, evoluindo de escopo de produto para operação e governança de nível enterprise."
+      },
+      "architecture": {
+        "title": "Destaques de Arquitetura",
+        "item1": "Fronteiras de serviço orientadas a domínio com ownership claro e extensibilidade.",
+        "item2": "Estratégia de modelo de dados preparada para expansão funcional e visibilidade analítica.",
+        "item3": "Camada de API pronta para crescimento de ecossistema e integrações externas.",
+        "item4": "Arquitetura operacional alinhada à maturidade incremental do produto."
+      },
+      "reliability": {
+        "title": "Confiabilidade e Observabilidade",
+        "item1": "Plano de telemetria para saúde dos fluxos de usuário e estabilidade de serviços backend.",
+        "item2": "Baseline de alertas para filas acumuladas, dependências degradadas e anomalias de release.",
+        "item3": "Dashboards combinando KPIs de produto e indicadores técnicos de confiabilidade.",
+        "item4": "Fluxo de runbook para comunicação de incidentes e restauração de serviço."
+      },
+      "security": {
+        "title": "Postura de Segurança",
+        "item1": "Controles de acesso desenhados para separação de atores internos, suporte e externos.",
+        "item2": "Postura de tratamento de dados sensíveis para registros de domínio e integrações.",
+        "item3": "Modelo seguro de integração para endpoints de terceiros e validação de webhooks.",
+        "item4": "Estratégia de auditabilidade para ações operacionais e administrativas."
+      },
+      "evidence": {
+        "title": "Evidências",
+        "item1": "Runbooks operacionais para deploy, rollback e contenção de incidentes.",
+        "item2": "Dashboards para tendências de uso da plataforma e métricas de confiabilidade.",
+        "item3": "Abordagem documentada de DR/HA com objetivos graduais de resiliência."
+      },
+      "screenshots": {
+        "title": "Slots de Screenshot",
+        "slot1Alt": "Screenshot de dashboard operacional do PetFlow",
+        "slot1Caption": "Dashboard operacional",
+        "slot2Alt": "Screenshot de snapshot analítico do PetFlow",
+        "slot2Caption": "Snapshot analítico",
+        "placeholder": "Screenshot pendente"
+      },
+      "roadmap": {
+        "title": "Roadmap para Nível Enterprise",
+        "body": "O roadmap de prontidão enterprise cobre consolidação de CI/CD, maior cobertura de testes automatizados e promotion gates que garantem qualidade antes da expansão."
+      },
+      "productsCta": "Ver produtos",
+      "requestDemoCta": "Solicitar demo"
+    }
   }
 }

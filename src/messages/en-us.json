@@ -290,5 +290,157 @@
       "crm": "CRM Platform",
       "petflow": "PetFlow"
     }
+  },
+  "privateCases": {
+    "iot": {
+      "eyebrow": "// private enterprise case",
+      "title": "IoT System",
+      "privateRepoLabel": "Private enterprise repository (code available on request)",
+      "executiveSummary": {
+        "title": "Executive Summary",
+        "body": "Flagship enterprise architecture for telemetry-heavy operations. The platform is event-driven, multi-tenant, and designed for high-throughput ingestion with resilient downstream analytics."
+      },
+      "architecture": {
+        "title": "Architecture Highlights",
+        "item1": "Kafka-centered event backbone for ingestion, fan-out processing, and replay-safe recovery.",
+        "item2": "TimescaleDB and operational read models for low-latency telemetry and trend dashboards.",
+        "item3": "Tenant isolation strategy across ingestion, processing, and API boundaries.",
+        "item4": "Service interfaces prepared for enterprise integration patterns and future product modules."
+      },
+      "reliability": {
+        "title": "Reliability and Observability",
+        "item1": "Service-level indicators and alerting strategy for ingestion lag, throughput, and processing failures.",
+        "item2": "Structured logging, distributed traces, and metric dashboards for rapid incident triage.",
+        "item3": "Failure-mode handling with replay orchestration and deterministic operational recovery.",
+        "item4": "HA posture with planned DR fallback for regional degradation scenarios."
+      },
+      "security": {
+        "title": "Security Posture",
+        "item1": "Role-based access controls aligned to tenant and operational boundaries.",
+        "item2": "Secret and credential isolation strategy for runtime components and integrations.",
+        "item3": "Event and API contract controls to reduce unauthorized data exposure risk.",
+        "item4": "Audit-oriented operational traces for compliance discussions."
+      },
+      "evidence": {
+        "title": "Evidence",
+        "item1": "Operational runbooks covering restart, replay, and incident containment procedures.",
+        "item2": "Dashboards and alert packs for ingestion health, tenant activity, and latency budgets.",
+        "item3": "Documented DR and HA approach with failover assumptions and recovery objectives."
+      },
+      "screenshots": {
+        "title": "Screenshot Slots",
+        "slot1Alt": "IoT command and control overview screenshot",
+        "slot1Caption": "Operations overview",
+        "slot2Alt": "IoT observability dashboard screenshot",
+        "slot2Caption": "Observability dashboard",
+        "placeholder": "Screenshot pending"
+      },
+      "roadmap": {
+        "title": "Roadmap to Enterprise-ready",
+        "body": "Next hardening milestones include CI/CD standardization, expanded automated tests, and promotion gates across development, staging, and production flows."
+      },
+      "productsCta": "See products",
+      "requestDemoCta": "Request demo"
+    },
+    "crm": {
+      "eyebrow": "// private enterprise case",
+      "title": "CRM Platform",
+      "privateRepoLabel": "Private enterprise repository (code available on request)",
+      "executiveSummary": {
+        "title": "Executive Summary",
+        "body": "SaaS-ready CRM platform with tenant-aware architecture and RBAC foundation, positioned for enterprise delivery hardening and controlled product evolution."
+      },
+      "architecture": {
+        "title": "Architecture Highlights",
+        "item1": "Multi-tenant domain model with clear tenant boundaries at data and application layers.",
+        "item2": "Modular service decomposition to support product packaging and feature governance.",
+        "item3": "RBAC-oriented access model designed for future policy expansion.",
+        "item4": "API contracts prepared for partner and internal system integrations."
+      },
+      "reliability": {
+        "title": "Reliability and Observability",
+        "item1": "Instrumentation strategy for tenant-level usage, API latency, and operational bottlenecks.",
+        "item2": "Error-budget informed alerts and structured incident workflow.",
+        "item3": "Dashboard coverage for authentication, onboarding flow, and critical user journeys.",
+        "item4": "Recovery runbooks for degraded dependencies and rollout rollback scenarios."
+      },
+      "security": {
+        "title": "Security Posture",
+        "item1": "Role and permission boundaries mapped to tenant and admin responsibilities.",
+        "item2": "Data handling controls for PII-sensitive workflows and export boundaries.",
+        "item3": "Authentication and session controls planned for enterprise policy alignment.",
+        "item4": "Audit trail strategy for key actions and administrative operations."
+      },
+      "evidence": {
+        "title": "Evidence",
+        "item1": "Access-control runbooks and operating guidelines for tenant management.",
+        "item2": "Usage and reliability dashboards for product and support teams.",
+        "item3": "DR and HA design notes covering state recovery and service continuity assumptions."
+      },
+      "screenshots": {
+        "title": "Screenshot Slots",
+        "slot1Alt": "CRM workspace overview screenshot",
+        "slot1Caption": "Workspace overview",
+        "slot2Alt": "CRM access controls screenshot",
+        "slot2Caption": "Access controls",
+        "placeholder": "Screenshot pending"
+      },
+      "roadmap": {
+        "title": "Roadmap to Enterprise-ready",
+        "body": "Hardening sequence prioritizes CI/CD discipline, broader automated test suites, and promotion gates with quality checks before production deployment."
+      },
+      "productsCta": "See products",
+      "requestDemoCta": "Request demo"
+    },
+    "petflow": {
+      "eyebrow": "// private enterprise case",
+      "title": "PetFlow",
+      "privateRepoLabel": "Private enterprise repository (code available on request)",
+      "executiveSummary": {
+        "title": "Executive Summary",
+        "body": "Domain-focused product platform with structured architecture, evolving from product scope toward enterprise-grade operation and governance."
+      },
+      "architecture": {
+        "title": "Architecture Highlights",
+        "item1": "Domain-driven service boundaries with clear ownership and extensibility.",
+        "item2": "Data model strategy built for feature expansion and analytics visibility.",
+        "item3": "Integration-ready API layer supporting external product ecosystem growth.",
+        "item4": "Operational architecture aligned with staged product maturity."
+      },
+      "reliability": {
+        "title": "Reliability and Observability",
+        "item1": "Runtime telemetry plan for user-flow health and backend service stability.",
+        "item2": "Alerting baseline for queue backlogs, degraded dependencies, and release anomalies.",
+        "item3": "Dashboards combining product KPIs with technical reliability indicators.",
+        "item4": "Runbook flow for incident communication and service restoration."
+      },
+      "security": {
+        "title": "Security Posture",
+        "item1": "Access controls designed for internal, support, and external actor separation.",
+        "item2": "Sensitive data handling posture for domain-specific records and integrations.",
+        "item3": "Secure integration model for third-party endpoints and webhook validation.",
+        "item4": "Auditability strategy for operational and administrative actions."
+      },
+      "evidence": {
+        "title": "Evidence",
+        "item1": "Operational runbooks for deployment, rollback, and incident containment.",
+        "item2": "Dashboards tracking platform usage trends and reliability metrics.",
+        "item3": "Documented DR and HA approach with staged resilience objectives."
+      },
+      "screenshots": {
+        "title": "Screenshot Slots",
+        "slot1Alt": "PetFlow operations dashboard screenshot",
+        "slot1Caption": "Operations dashboard",
+        "slot2Alt": "PetFlow analytics snapshot screenshot",
+        "slot2Caption": "Analytics snapshot",
+        "placeholder": "Screenshot pending"
+      },
+      "roadmap": {
+        "title": "Roadmap to Enterprise-ready",
+        "body": "Enterprise-readiness roadmap covers CI/CD consolidation, stronger automated test coverage, and promotion gates that enforce release quality before scale-out."
+      },
+      "productsCta": "See products",
+      "requestDemoCta": "Request demo"
+    }
   }
 }
