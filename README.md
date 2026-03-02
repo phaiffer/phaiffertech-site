@@ -1,36 +1,84 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Phaiffer Tech Site
 
-## Getting Started
+Portfolio and consulting website built with Next.js App Router, TypeScript, Tailwind, and localized routing with `next-intl`.
 
-First, run the development server:
+## Run Locally
 
 ```bash
+npm ci
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open:
+- `http://localhost:3000/pt-br`
+- `http://localhost:3000/en-us`
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+The root path (`/`) redirects to `/pt-br`.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Quality Gates
 
-## Learn More
+Run before shipping:
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm run lint
+npm run build
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Locale and Translations
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Configured locales:
+- `pt-br` (default)
+- `en-us`
 
-## Deploy on Vercel
+Main i18n files:
+- `middleware.ts`
+- `src/i18n/routing.ts`
+- `src/i18n/request.ts`
+- `src/messages/pt-br.json`
+- `src/messages/en-us.json`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Add or Update Translation Keys
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Add the same key in both message files:
+   - `src/messages/pt-br.json`
+   - `src/messages/en-us.json`
+2. Read values with `getTranslations(...)` (server components) or `useTranslations(...)` (client components).
+3. Keep key structure consistent across both locales.
+
+## Route Model
+
+Primary localized routes:
+- `/{locale}`
+- `/{locale}/engineering`
+- `/{locale}/services`
+- `/{locale}/products`
+- `/{locale}/case-studies`
+- `/{locale}/contact`
+
+Engineering case routes:
+- `/{locale}/engineering/iot-platform`
+- `/{locale}/engineering/enterprise-data-platform`
+- `/{locale}/engineering/crm-saas`
+- `/{locale}/engineering/petflow`
+
+## Adding Private Case Screenshots
+
+Private case pages use image slots with graceful fallback placeholders.
+
+Expected folders:
+- `public/case-studies/iot-system/`
+- `public/case-studies/crm-platform/`
+- `public/case-studies/petflow/`
+
+Current slot filenames:
+- IoT: `overview.png`, `observability.png`
+- CRM: `workspace.png`, `access-controls.png`
+- PetFlow: `operations.png`, `analytics.png`
+
+If a file is missing, the page shows a neutral placeholder box instead of a broken image.
+
+## Lakehouse Case Study
+
+Homepage and case-study routing include NYC TLC Lakehouse references:
+- Repository: `https://github.com/phaiffer/nyc-tlc-lakehouse`
+- Runbook: `https://github.com/phaiffer/nyc-tlc-lakehouse/blob/main/docs/runbook.md`
