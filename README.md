@@ -61,6 +61,9 @@ Engineering case routes:
 - `/{locale}/engineering/crm-saas`
 - `/{locale}/engineering/petflow`
 
+Public case-study routes:
+- `/{locale}/case-studies/enterprise-data-platform`
+
 ## Adding Private Case Screenshots
 
 Private case pages use image slots with graceful fallback placeholders.
@@ -82,3 +85,31 @@ If a file is missing, the page shows a neutral placeholder box instead of a brok
 Homepage and case-study routing include NYC TLC Lakehouse references:
 - Repository: `https://github.com/phaiffer/nyc-tlc-lakehouse`
 - Runbook: `https://github.com/phaiffer/nyc-tlc-lakehouse/blob/main/docs/runbook.md`
+
+## Portfolio Integration Notes: Enterprise Industrial Data Platform
+
+Integrated perspectives:
+- Flagship Data/Cloud Architect (`/{locale}/engineering/enterprise-data-platform`)
+- Flagship Data Engineer (`/{locale}/case-studies/enterprise-data-platform`)
+
+Bilingual and i18n:
+- Content is localized in both `pt-br` and `en-us` via `next-intl`.
+- Keys were added in:
+  - `src/messages/pt-br.json`
+  - `src/messages/en-us.json`
+
+Homepage and navigation:
+- Homepage includes an Engineering flagship card that links to:
+  - Engineering architecture deep-dive page
+  - KPI case-study page
+  - Case studies index (`/{locale}/case-studies`)
+- Navigation order now explicitly includes:
+  - Engineering
+  - Case Studies
+  - Services
+  - Products
+
+Evidence placeholders for the public case-study page:
+- `public/case-studies/enterprise-data-platform/dbt-lineage.png`
+- `public/case-studies/enterprise-data-platform/great-expectations-data-docs.png`
+- `public/case-studies/enterprise-data-platform/grafana-mode2-dashboard.png`
