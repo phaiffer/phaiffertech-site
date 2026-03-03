@@ -3,17 +3,15 @@ import { getTranslations } from "next-intl/server";
 import { Navbar } from "@/components/sections/Navbar";
 import { Container } from "@/components/ui/Container";
 
-const repositoryUrl = "https://github.com/phaiffer/nyc-tlc-lakehouse";
+const repositoryUrl = "https://github.com/phaiffer/enterprise-industrial-data-platform";
 
 const reproducibilityCommands = `make setup
-make download YEAR=2024 MONTH=1
-make reset
-make run YEAR=2024 MONTH=1
-make inspect
-make demo
-python orchestration/local/run_pipeline.py run-backfill --from 2024-01 --to 2024-02
-dbt build --select tag:contract_enforced
-great_expectations checkpoint run bronze_to_silver`;
+make run-all
+make dbt-test
+make dq
+make portfolio
+make portfolio-open
+make portfolio-validate`;
 
 type Props = {
   params: Promise<{ locale: string }>;

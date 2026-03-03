@@ -1,52 +1,123 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { Navbar } from "@/components/sections/Navbar";
-import { CaseStudyImageSlot } from "@/components/ui/CaseStudyImageSlot";
 import { Container } from "@/components/ui/Container";
+import { type AppLocale } from "@/i18n/routing";
 
-const repositoryUrl = "https://github.com/phaiffer/nyc-tlc-lakehouse";
+const repositoryUrl = "https://github.com/phaiffer/enterprise-industrial-data-platform";
 
 type Props = {
   params: Promise<{ locale: string }>;
 };
 
+const architectureMermaid = `flowchart LR
+  S[Source Systems] --> B[Bronze Ingestion]
+  B --> S1[Silver Standardization]
+  S1 --> G[Gold Data Products]
+  G --> R[Portfolio Reports]
+  S1 --> Q[Quality Gates]
+  Q --> R
+  O[Observability + SLAs] --> R`;
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale: locale as AppLocale, namespace: "publicCases.enterpriseDataPlatform.seo" });
+
+  return {
+    title: t("title"),
+    description: t("description"),
+  };
+}
+
 export default async function EnterpriseDataPlatformCaseStudyPage({ params }: Props) {
   const { locale } = await params;
   const t = await getTranslations("publicCases.enterpriseDataPlatform");
 
-  const kpis = [
+  const whatItShowsItems = [
+    t("whatItShows.item1"),
+    t("whatItShows.item2"),
+    t("whatItShows.item3"),
+    t("whatItShows.item4"),
+  ];
+
+  const whatItSolvesItems = [
+    t("whatItSolves.item1"),
+    t("whatItSolves.item2"),
+    t("whatItSolves.item3"),
+    t("whatItSolves.item4"),
+  ];
+
+  const architectureItems = [
+    t("architecture.item1"),
+    t("architecture.item2"),
+    t("architecture.item3"),
+    t("architecture.item4"),
+  ];
+
+  const dataFlowItems = [t("dataFlow.item1"), t("dataFlow.item2"), t("dataFlow.item3"), t("dataFlow.item4")];
+  const slaItems = [t("slas.item1"), t("slas.item2"), t("slas.item3"), t("slas.item4")];
+  const contractItems = [t("contracts.item1"), t("contracts.item2"), t("contracts.item3"), t("contracts.item4")];
+  const qualityGateItems = [
+    t("qualityGates.item1"),
+    t("qualityGates.item2"),
+    t("qualityGates.item3"),
+    t("qualityGates.item4"),
+  ];
+  const observabilityItems = [
+    t("observabilitySignals.item1"),
+    t("observabilitySignals.item2"),
+    t("observabilitySignals.item3"),
+    t("observabilitySignals.item4"),
+  ];
+  const securityItems = [
+    t("securityGovernance.item1"),
+    t("securityGovernance.item2"),
+    t("securityGovernance.item3"),
+    t("securityGovernance.item4"),
+  ];
+
+  const evidenceArtifacts = [
     {
-      value: t("kpis.item1.value"),
-      label: t("kpis.item1.label"),
-      detail: t("kpis.item1.detail"),
+      href: repositoryUrl,
+      label: t("evidenceArtifacts.repoLabel"),
+      description: t("evidenceArtifacts.repoDescription"),
     },
     {
-      value: t("kpis.item2.value"),
-      label: t("kpis.item2.label"),
-      detail: t("kpis.item2.detail"),
+      href: `${repositoryUrl}/blob/main/docs/runbook.md`,
+      label: t("evidenceArtifacts.runbookLabel"),
+      description: t("evidenceArtifacts.runbookDescription"),
     },
     {
-      value: t("kpis.item3.value"),
-      label: t("kpis.item3.label"),
-      detail: t("kpis.item3.detail"),
+      href: `${repositoryUrl}/blob/main/docs/data_contracts.md`,
+      label: t("evidenceArtifacts.contractsLabel"),
+      description: t("evidenceArtifacts.contractsDescription"),
     },
     {
-      value: t("kpis.item4.value"),
-      label: t("kpis.item4.label"),
-      detail: t("kpis.item4.detail"),
+      href: `${repositoryUrl}/blob/main/docs/PRODUCTION_PATH.md`,
+      label: t("evidenceArtifacts.productionPathLabel"),
+      description: t("evidenceArtifacts.productionPathDescription"),
+    },
+    {
+      href: `${repositoryUrl}/blob/main/scripts/export_portfolio_pack.py`,
+      label: t("evidenceArtifacts.portfolioScriptLabel"),
+      description: t("evidenceArtifacts.portfolioScriptDescription"),
+    },
+    {
+      href: `${repositoryUrl}/blob/main/.github/workflows/ci.yml`,
+      label: t("evidenceArtifacts.ciLabel"),
+      description: t("evidenceArtifacts.ciDescription"),
     },
   ];
 
-  const governanceItems = [
-    t("governance.item1"),
-    t("governance.item2"),
-    t("governance.item3"),
-    t("governance.item4"),
+  const demoAssetsStrategyItems = [
+    t("demoAssetsStrategy.item1"),
+    t("demoAssetsStrategy.item2"),
+    t("demoAssetsStrategy.item3"),
+    t("demoAssetsStrategy.item4"),
+    t("demoAssetsStrategy.item5"),
+    t("demoAssetsStrategy.item6"),
   ];
-
-  const qualityItems = [t("quality.item1"), t("quality.item2"), t("quality.item3"), t("quality.item4")];
-
-  const outcomeItems = [t("outcomes.item1"), t("outcomes.item2"), t("outcomes.item3"), t("outcomes.item4")];
 
   return (
     <main className="bg-brand-navy">
@@ -79,35 +150,19 @@ export default async function EnterpriseDataPlatformCaseStudyPage({ params }: Pr
 
       <section className="py-16 lg:py-20">
         <Container>
-          <article className="rounded-[var(--radius-xl)] border border-white/10 bg-white/[0.02] p-6">
-            <h2 className="text-2xl font-bold tracking-tight">{t("kpisTitle")}</h2>
-            <p className="mt-4 max-w-3xl text-sm leading-relaxed text-ui-muted">{t("kpisSubtitle")}</p>
-
-            <div className="mt-6 grid gap-4 md:grid-cols-2">
-              {kpis.map((kpi) => (
-                <div key={kpi.label} className="rounded-[var(--radius-xl)] border border-white/10 bg-black/20 p-5">
-                  <p className="text-3xl font-black tracking-tight text-brand-cyan">{kpi.value}</p>
-                  <p className="mt-2 text-sm font-semibold tracking-wide text-ui-fg uppercase">{kpi.label}</p>
-                  <p className="mt-3 text-sm leading-relaxed text-ui-muted">{kpi.detail}</p>
-                </div>
-              ))}
-            </div>
-          </article>
-
-          <div className="mt-8 grid gap-8 md:grid-cols-2">
+          <div className="grid gap-8 md:grid-cols-2">
             <article className="rounded-[var(--radius-xl)] border border-white/10 bg-white/[0.02] p-6">
-              <h2 className="text-2xl font-bold tracking-tight">{t("governance.title")}</h2>
+              <h2 className="text-2xl font-bold tracking-tight">{t("whatItShows.title")}</h2>
               <ul className="mt-5 space-y-3 text-sm leading-relaxed text-ui-muted">
-                {governanceItems.map((item) => (
+                {whatItShowsItems.map((item) => (
                   <li key={item}>• {item}</li>
                 ))}
               </ul>
             </article>
-
             <article className="rounded-[var(--radius-xl)] border border-white/10 bg-white/[0.02] p-6">
-              <h2 className="text-2xl font-bold tracking-tight">{t("quality.title")}</h2>
+              <h2 className="text-2xl font-bold tracking-tight">{t("whatItSolves.title")}</h2>
               <ul className="mt-5 space-y-3 text-sm leading-relaxed text-ui-muted">
-                {qualityItems.map((item) => (
+                {whatItSolvesItems.map((item) => (
                   <li key={item}>• {item}</li>
                 ))}
               </ul>
@@ -115,35 +170,104 @@ export default async function EnterpriseDataPlatformCaseStudyPage({ params }: Pr
           </div>
 
           <article className="mt-8 rounded-[var(--radius-xl)] border border-white/10 bg-white/[0.02] p-6">
-            <h2 className="text-2xl font-bold tracking-tight">{t("screenshots.title")}</h2>
-            <p className="mt-4 text-sm leading-relaxed text-ui-muted">{t("screenshots.subtitle")}</p>
+            <h2 className="text-2xl font-bold tracking-tight">{t("architecture.title")}</h2>
+            <p className="mt-4 text-sm leading-relaxed text-ui-muted">{t("architecture.subtitle")}</p>
 
-            <div className="mt-6 grid gap-5 lg:grid-cols-3">
-              <CaseStudyImageSlot
-                src="/case-studies/enterprise-data-platform/dbt-lineage.png"
-                alt={t("screenshots.dbtLineageAlt")}
-                caption={t("screenshots.dbtLineageCaption")}
-                placeholderLabel={t("screenshots.placeholder")}
-              />
-              <CaseStudyImageSlot
-                src="/case-studies/enterprise-data-platform/great-expectations-data-docs.png"
-                alt={t("screenshots.greatExpectationsAlt")}
-                caption={t("screenshots.greatExpectationsCaption")}
-                placeholderLabel={t("screenshots.placeholder")}
-              />
-              <CaseStudyImageSlot
-                src="/case-studies/enterprise-data-platform/grafana-mode2-dashboard.png"
-                alt={t("screenshots.grafanaAlt")}
-                caption={t("screenshots.grafanaCaption")}
-                placeholderLabel={t("screenshots.placeholder")}
-              />
+            <pre className="mt-5 overflow-x-auto rounded-[var(--radius-xl)] border border-white/10 bg-black/25 p-4 text-xs leading-relaxed text-ui-muted">
+{`mermaid
+${architectureMermaid}`}
+            </pre>
+
+            <ul className="mt-5 space-y-3 text-sm leading-relaxed text-ui-muted">
+              {architectureItems.map((item) => (
+                <li key={item}>• {item}</li>
+              ))}
+            </ul>
+          </article>
+
+          <div className="mt-8 grid gap-8 md:grid-cols-2">
+            <article className="rounded-[var(--radius-xl)] border border-white/10 bg-white/[0.02] p-6">
+              <h2 className="text-2xl font-bold tracking-tight">{t("dataFlow.title")}</h2>
+              <ul className="mt-5 space-y-3 text-sm leading-relaxed text-ui-muted">
+                {dataFlowItems.map((item) => (
+                  <li key={item}>• {item}</li>
+                ))}
+              </ul>
+            </article>
+
+            <article className="rounded-[var(--radius-xl)] border border-white/10 bg-white/[0.02] p-6">
+              <h2 className="text-2xl font-bold tracking-tight">{t("slas.title")}</h2>
+              <ul className="mt-5 space-y-3 text-sm leading-relaxed text-ui-muted">
+                {slaItems.map((item) => (
+                  <li key={item}>• {item}</li>
+                ))}
+              </ul>
+            </article>
+          </div>
+
+          <div className="mt-8 grid gap-8 md:grid-cols-2">
+            <article className="rounded-[var(--radius-xl)] border border-white/10 bg-white/[0.02] p-6">
+              <h2 className="text-2xl font-bold tracking-tight">{t("contracts.title")}</h2>
+              <ul className="mt-5 space-y-3 text-sm leading-relaxed text-ui-muted">
+                {contractItems.map((item) => (
+                  <li key={item}>• {item}</li>
+                ))}
+              </ul>
+            </article>
+
+            <article className="rounded-[var(--radius-xl)] border border-white/10 bg-white/[0.02] p-6">
+              <h2 className="text-2xl font-bold tracking-tight">{t("qualityGates.title")}</h2>
+              <ul className="mt-5 space-y-3 text-sm leading-relaxed text-ui-muted">
+                {qualityGateItems.map((item) => (
+                  <li key={item}>• {item}</li>
+                ))}
+              </ul>
+            </article>
+          </div>
+
+          <div className="mt-8 grid gap-8 md:grid-cols-2">
+            <article className="rounded-[var(--radius-xl)] border border-white/10 bg-white/[0.02] p-6">
+              <h2 className="text-2xl font-bold tracking-tight">{t("observabilitySignals.title")}</h2>
+              <ul className="mt-5 space-y-3 text-sm leading-relaxed text-ui-muted">
+                {observabilityItems.map((item) => (
+                  <li key={item}>• {item}</li>
+                ))}
+              </ul>
+            </article>
+
+            <article className="rounded-[var(--radius-xl)] border border-white/10 bg-white/[0.02] p-6">
+              <h2 className="text-2xl font-bold tracking-tight">{t("securityGovernance.title")}</h2>
+              <ul className="mt-5 space-y-3 text-sm leading-relaxed text-ui-muted">
+                {securityItems.map((item) => (
+                  <li key={item}>• {item}</li>
+                ))}
+              </ul>
+            </article>
+          </div>
+
+          <article className="mt-8 rounded-[var(--radius-xl)] border border-white/10 bg-white/[0.02] p-6">
+            <h2 className="text-2xl font-bold tracking-tight">{t("evidenceArtifacts.title")}</h2>
+            <div className="mt-6 grid gap-4 md:grid-cols-2">
+              {evidenceArtifacts.map((item) => (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="rounded-[var(--radius-xl)] border border-white/10 bg-black/20 p-4 transition-colors hover:border-brand-cyan"
+                >
+                  <h3 className="text-sm font-semibold tracking-wide text-brand-cyan uppercase">{item.label}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-ui-muted">{item.description}</p>
+                </a>
+              ))}
             </div>
           </article>
 
           <article className="mt-8 rounded-[var(--radius-xl)] border border-brand-cyan/30 bg-brand-cyan/10 p-6">
-            <h2 className="text-2xl font-bold tracking-tight">{t("outcomes.title")}</h2>
+            <h2 className="text-2xl font-bold tracking-tight">{t("demoAssetsStrategy.title")}</h2>
+            <p className="mt-4 text-sm leading-relaxed text-ui-muted">{t("demoAssetsStrategy.subtitle")}</p>
             <ul className="mt-5 space-y-3 text-sm leading-relaxed text-ui-muted">
-              {outcomeItems.map((item) => (
+              {demoAssetsStrategyItems.map((item) => (
                 <li key={item}>• {item}</li>
               ))}
             </ul>

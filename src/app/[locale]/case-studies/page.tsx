@@ -4,6 +4,7 @@ import { Navbar } from "@/components/sections/Navbar";
 import { Container } from "@/components/ui/Container";
 
 const repositoryUrl = "https://github.com/phaiffer/nyc-tlc-lakehouse";
+const enterpriseRepositoryUrl = "https://github.com/phaiffer/enterprise-industrial-data-platform";
 const runbookUrl = "https://github.com/phaiffer/nyc-tlc-lakehouse/blob/main/docs/runbook.md";
 
 type Props = {
@@ -93,12 +94,12 @@ export default async function CaseStudiesPage({ params }: Props) {
                   {t("enterpriseDataPlatform.viewCaseCta")}
                 </Link>
                 <a
-                  href={repositoryUrl}
+                  href={enterpriseRepositoryUrl}
                   target="_blank"
                   rel="noreferrer"
                   className="rounded-[var(--radius-xl)] border border-white/10 px-4 py-2 text-sm font-semibold text-ui-fg transition-colors hover:border-brand-cyan"
                 >
-                  {t("lakehouse.repositoryCta")}
+                  {t("enterpriseDataPlatform.repositoryCta")}
                 </a>
               </div>
             </article>

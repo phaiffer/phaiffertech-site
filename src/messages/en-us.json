@@ -332,8 +332,9 @@
     "enterpriseDataPlatform": {
       "tag": "flagship public case",
       "title": "Enterprise Industrial Data Platform",
-      "summary": "Outcome-focused case covering KPI evidence, governance operating model, and enforceable data quality controls.",
-      "viewCaseCta": "View KPI case"
+      "summary": "Backend-first case showing architecture, quality gates, SLAs, and operational evidence from a production-minded industrial data platform.",
+      "viewCaseCta": "View case",
+      "repositoryCta": "Repository"
     }
   },
   "contactPage": {
@@ -361,52 +362,59 @@
     "iot": {
       "eyebrow": "// private enterprise case",
       "title": "IoT System",
+      "subtitle": "Industrial IoT SaaS platform: Modbus polling, Kafka pipeline, OLTP + Timescale, RBAC, audit, observability.",
       "privateRepoLabel": "Private enterprise repository (code available on request)",
+      "seo": {
+        "title": "IoT System Case Study | Phaiffer Tech",
+        "description": "Industrial IoT SaaS case study with command dashboard, observability evidence, architecture, security governance, and enterprise delivery outcomes."
+      },
+      "whatItShows": {
+        "title": "What it shows",
+        "subtitle": "Two production screenshots from the operational layer and observability stack.",
+        "item1": "Operational Command View for fleet health, alarms, tenant context, and device command workflows.",
+        "item2": "Operational Observability Dashboard for ingestion latency, throughput, and processing-state visibility.",
+        "item3": "Unified operator context for command execution and real-time diagnostics during incidents.",
+        "item4": "Practical enterprise UX focused on critical decisions instead of vanity metrics."
+      },
+      "whatItSolves": {
+        "title": "What it solves",
+        "item1": "Reduces mean-time-to-detect and mean-time-to-recover for telemetry and command-path incidents.",
+        "item2": "Improves reliability for multi-tenant industrial operations with strict isolation boundaries.",
+        "item3": "Creates a single operational truth across telemetry ingestion, command dispatch, and alerting.",
+        "item4": "Supports predictable scale-out from pilot facilities to enterprise multi-site deployments."
+      },
       "executiveSummary": {
         "title": "Executive Summary",
         "body": "Flagship enterprise architecture for telemetry-heavy operations. The platform is event-driven, multi-tenant, and designed for high-throughput ingestion with resilient downstream analytics."
       },
       "architecture": {
-        "title": "Architecture Highlights",
-        "item1": "Kafka-centered event backbone for ingestion, fan-out processing, and replay-safe recovery.",
-        "item2": "TimescaleDB and operational read models for low-latency telemetry and trend dashboards.",
-        "item3": "Tenant isolation strategy across ingestion, processing, and API boundaries.",
-        "item4": "Service interfaces prepared for enterprise integration patterns and future product modules."
+        "title": "Architecture",
+        "item1": "Modbus polling and protocol adapters ingest field telemetry into a Kafka-centered event backbone.",
+        "item2": "Processing services enrich and route telemetry to OLTP workflows and Timescale time-series analytics.",
+        "item3": "Command APIs are decoupled from ingestion paths, preserving resilience under burst traffic.",
+        "item4": "Replay and backfill flows support deterministic recovery for missed windows and downstream outages."
       },
-      "reliability": {
-        "title": "Reliability and Observability",
-        "item1": "Service-level indicators and alerting strategy for ingestion lag, throughput, and processing failures.",
-        "item2": "Structured logging, distributed traces, and metric dashboards for rapid incident triage.",
-        "item3": "Failure-mode handling with replay orchestration and deterministic operational recovery.",
-        "item4": "HA posture with planned DR fallback for regional degradation scenarios."
-      },
-      "security": {
-        "title": "Security Posture",
-        "item1": "Role-based access controls aligned to tenant and operational boundaries.",
-        "item2": "Secret and credential isolation strategy for runtime components and integrations.",
-        "item3": "Event and API contract controls to reduce unauthorized data exposure risk.",
-        "item4": "Audit-oriented operational traces for compliance discussions."
+      "securityGovernance": {
+        "title": "Security & Governance",
+        "item1": "Role-based access controls enforce tenant boundaries for operators, administrators, and integrators.",
+        "item2": "Command and data-access actions are audit-traced with actor, timestamp, and scope metadata.",
+        "item3": "Secrets and connector credentials are isolated per environment and integration boundary.",
+        "item4": "Operational governance uses runbooks, ownership mapping, and incident/postmortem protocols."
       },
       "evidence": {
         "title": "Evidence",
-        "item1": "Operational runbooks covering restart, replay, and incident containment procedures.",
-        "item2": "Dashboards and alert packs for ingestion health, tenant activity, and latency budgets.",
-        "item3": "Documented DR and HA approach with failover assumptions and recovery objectives."
+        "item1": "Operational runbooks for restart, replay, and command-path incident containment.",
+        "item2": "Alert packs tied to ingestion lag, processing backlogs, and tenant-level error budgets.",
+        "item3": "Production dashboards proving throughput, latency, and service-level behavior over time."
       },
       "screenshots": {
-        "title": "Screenshot Slots",
-        "slot1Alt": "IoT command and control overview screenshot",
-        "slot1Caption": "Operations overview",
-        "slot2Alt": "IoT observability dashboard screenshot",
-        "slot2Caption": "Observability dashboard",
-        "placeholder": "Screenshot pending"
+        "commandAlt": "Operational Command View screenshot for the IoT platform",
+        "commandCaption": "Operational Command View",
+        "observabilityAlt": "Operational Observability Dashboard screenshot for the IoT platform",
+        "observabilityCaption": "Operational Observability Dashboard"
       },
-      "roadmap": {
-        "title": "Roadmap to Enterprise-ready",
-        "body": "Next hardening milestones include CI/CD standardization, expanded automated tests, and promotion gates across development, staging, and production flows."
-      },
-      "productsCta": "See products",
-      "requestDemoCta": "Request demo"
+      "caseStudiesCta": "View case studies",
+      "consultingCta": "Discuss your scenario"
     },
     "crm": {
       "eyebrow": "// private enterprise case",
@@ -511,66 +519,103 @@
   },
   "publicCases": {
     "enterpriseDataPlatform": {
-      "eyebrow": "// public KPI case study",
+      "eyebrow": "// public backend case study",
       "title": "Enterprise Industrial Data Platform",
-      "summary": "Measured outcomes from a two-mode data platform architecture where local deterministic validation and enterprise governed operations share the same contract semantics.",
+      "summary": "Backend-focused enterprise case showing how data flow, SLAs, contracts, quality gates, and observability become public delivery evidence.",
+      "seo": {
+        "title": "Enterprise Industrial Data Platform Case Study | Phaiffer Tech",
+        "description": "Backend case study with architecture diagram, data flow, SLAs, contracts, quality gates, observability signals, and public evidence artifacts."
+      },
       "repositoryCta": "Open public repository",
       "engineeringCta": "Open engineering deep dive",
-      "kpisTitle": "KPI Outcomes",
-      "kpisSubtitle": "Metrics captured during implementation and hardening cycles to validate platform value and operational readiness.",
-      "kpis": {
-        "item1": {
-          "value": "99.3%",
-          "label": "Contract pass rate (Silver -> Gold)",
-          "detail": "Rows that satisfied mandatory schema and expectation gates before promotion to Gold datasets."
-        },
-        "item2": {
-          "value": "-57%",
-          "label": "Incident triage time",
-          "detail": "Reduction in average root-cause isolation time after standardized run metadata, alerts, and dashboard baselines."
-        },
-        "item3": {
-          "value": "2.4x",
-          "label": "Faster environment onboarding",
-          "detail": "Acceleration from deterministic Mode 1 bootstrap and reproducible command/runbook execution."
-        },
-        "item4": {
-          "value": "0",
-          "label": "Silent schema drift promotions",
-          "detail": "Schema drifts detected and blocked by contract gates before analytical consumers were exposed."
-        }
+      "whatItShows": {
+        "title": "What it shows",
+        "item1": "A production-minded industrial data platform designed with explicit trust boundaries from ingestion to analytics.",
+        "item2": "Deterministic portfolio exports and machine-readable manifests suitable for customer-facing sales enablement.",
+        "item3": "Contract-first data delivery discipline, with quality controls as mandatory release gates.",
+        "item4": "Operational evidence artifacts that hiring teams and customers can verify directly in the public repository."
       },
-      "governance": {
-        "title": "Governance Model",
-        "item1": "Domain producers own source contracts in Bronze and are accountable for upstream change communication.",
-        "item2": "Data platform ownership governs shared transformation standards, lineage policies, and release controls.",
-        "item3": "Data product owners approve Silver-to-Gold semantic changes using versioned contracts and review checklists.",
-        "item4": "Operational accountability is explicit through run ownership, on-call rotation, and incident postmortem cadence."
+      "whatItSolves": {
+        "title": "What it solves",
+        "item1": "Inconsistent data handoffs between ingestion and analytics teams.",
+        "item2": "Low trust in KPI outputs caused by weak quality enforcement and undocumented assumptions.",
+        "item3": "Difficult incident triage due to missing run context and fragmented observability signals.",
+        "item4": "Poor customer communication when backend projects lack clear demonstration artifacts."
       },
-      "quality": {
-        "title": "Data Quality Enforcement",
-        "item1": "dbt model tests execute as non-optional gates for keys, relationships, and semantic constraints before publication.",
-        "item2": "Great Expectations checkpoints enforce completeness, validity, and drift boundaries at ingestion and refinement stages.",
-        "item3": "Failed records are isolated in quarantine datasets with actionable failure metadata for replay and remediation.",
-        "item4": "Promotion policies require green quality gates in CI/CD, preventing manual bypass in standard release paths."
+      "architecture": {
+        "title": "Architecture",
+        "subtitle": "Mermaid snapshot of the platform operating model used for portfolio demonstrations.",
+        "item1": "Layered flow from Bronze ingestion to Silver standardization and Gold data products.",
+        "item2": "Quality gates and observability wired into promotion paths, not treated as afterthoughts.",
+        "item3": "Reproducible run context with run_id, timestamps, row counts, and DQ outcomes.",
+        "item4": "Portfolio report generation isolated from raw data to keep public artifacts lightweight."
       },
-      "screenshots": {
-        "title": "Evidence Placeholders",
-        "subtitle": "Slots below are intentionally prepared for public evidence artifacts: dbt lineage, Great Expectations Data Docs, and Mode 2 Grafana monitoring.",
-        "placeholder": "Screenshot pending",
-        "dbtLineageAlt": "dbt lineage screenshot placeholder",
-        "dbtLineageCaption": "dbt lineage view (placeholder)",
-        "greatExpectationsAlt": "Great Expectations Data Docs screenshot placeholder",
-        "greatExpectationsCaption": "Great Expectations Data Docs (placeholder)",
-        "grafanaAlt": "Grafana dashboard screenshot placeholder for Mode 2",
-        "grafanaCaption": "Grafana Mode 2 reliability dashboard (placeholder)"
+      "dataFlow": {
+        "title": "Data flow",
+        "item1": "Source records are ingested into Bronze with ingestion metadata and immutable traceability fields.",
+        "item2": "Silver applies type normalization, deduplication, and schema conformance checks.",
+        "item3": "Gold publishes business-facing data products and KPI-ready tables.",
+        "item4": "Portfolio export job reads curated outputs and emits website-ready evidence packs."
       },
-      "outcomes": {
-        "title": "Measured Delivery Outcomes",
-        "item1": "Contract-first release flow reduced downstream rework by catching breaking changes before Gold publication.",
-        "item2": "Governance roles reduced ambiguity in ownership, improving escalation speed during data incidents.",
-        "item3": "Dual-mode architecture preserved developer velocity without compromising enterprise control requirements.",
-        "item4": "Public reproducibility artifacts created interview-grade proof for architecture, reliability, and platform operations."
+      "slas": {
+        "title": "SLAs",
+        "item1": "Stage runtime SLAs are monitored and reported in each portfolio run manifest.",
+        "item2": "Freshness expectations are defined for promoted datasets before stakeholder consumption.",
+        "item3": "Alert thresholds target latency regressions and stalled processing windows.",
+        "item4": "SLA compliance signals are captured as part of delivery readiness evidence."
+      },
+      "contracts": {
+        "title": "Data contracts",
+        "item1": "Schema contracts are enforced at ingestion and transformation boundaries.",
+        "item2": "Layer ownership is explicit across Bronze, Silver, and Gold responsibilities.",
+        "item3": "Contract changes are reviewable and traceable through versioned project history.",
+        "item4": "Contract outcomes are visible in CI and run artifacts for auditability."
+      },
+      "qualityGates": {
+        "title": "Quality gates",
+        "item1": "dbt tests run as release gates for keys, relationships, and semantic assumptions.",
+        "item2": "Great Expectations checkpoints enforce completeness, validity, and allowed-value rules.",
+        "item3": "Violation counts are summarized in run manifests and exported quality charts.",
+        "item4": "Promotion paths require passing quality checks before downstream publication."
+      },
+      "observabilitySignals": {
+        "title": "Observability signals",
+        "item1": "Pipeline runtime, throughput, and freshness metrics are captured per execution stage.",
+        "item2": "Data quality outcomes are published as explicit validation statistics.",
+        "item3": "Export jobs track artifact sizes and generation metadata for reproducibility.",
+        "item4": "Operational status is packaged as evidence for technical due diligence."
+      },
+      "securityGovernance": {
+        "title": "Security & Governance",
+        "item1": "No secrets or private datasets are committed in public evidence outputs.",
+        "item2": "Repository guidance defines boundaries for public artifacts versus generated runtime data.",
+        "item3": "Governance narratives explain ownership, controls, and release criteria.",
+        "item4": "PII handling guidance is documented for enterprise adaptation."
+      },
+      "evidenceArtifacts": {
+        "title": "Evidence artifacts",
+        "repoLabel": "Public repository",
+        "repoDescription": "Complete source tree with reproducible commands and architecture context.",
+        "runbookLabel": "Runbook",
+        "runbookDescription": "Execution and operating procedures for the reproducible pipeline flow.",
+        "contractsLabel": "Data contracts",
+        "contractsDescription": "Schema and validation contract documentation used by the platform.",
+        "productionPathLabel": "Production path",
+        "productionPathDescription": "Deployment and operating-mode guidance from local validation to enterprise runtime.",
+        "portfolioScriptLabel": "Portfolio exporter script",
+        "portfolioScriptDescription": "Deterministic chart and manifest generator used for website-ready evidence packs.",
+        "ciLabel": "CI workflow",
+        "ciDescription": "Automated validation path including linting and portfolio generation checks."
+      },
+      "demoAssetsStrategy": {
+        "title": "Demo assets strategy",
+        "subtitle": "Why backend projects are presented through verifiable engineering evidence instead of fake front-end visuals.",
+        "item1": "Architecture diagrams communicate design decisions and system boundaries clearly.",
+        "item2": "Runbooks capture operational procedures and incident-response discipline.",
+        "item3": "Tests and quality gates prove reliability claims through executable checks.",
+        "item4": "Sample queries and dataset lineage show practical analytics usability.",
+        "item5": "CI checks provide repeatable proof that the project remains healthy over time.",
+        "item6": "Portfolio manifests make each demo run auditable and reproducible for stakeholders."
       }
     }
   }

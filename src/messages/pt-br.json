@@ -332,8 +332,9 @@
     "enterpriseDataPlatform": {
       "tag": "case público flagship",
       "title": "Enterprise Industrial Data Platform",
-      "summary": "Case orientado a resultado com evidência de KPIs, modelo operacional de governança e controles executáveis de qualidade de dados.",
-      "viewCaseCta": "Ver case com KPIs"
+      "summary": "Case backend-first mostrando arquitetura, quality gates, SLAs e evidências operacionais de uma plataforma industrial orientada à produção.",
+      "viewCaseCta": "Ver case",
+      "repositoryCta": "Repositório"
     }
   },
   "contactPage": {
@@ -361,52 +362,59 @@
     "iot": {
       "eyebrow": "// case privado enterprise",
       "title": "Sistema IoT",
-      "privateRepoLabel": "Private enterprise repository (code available on request)",
+      "subtitle": "Plataforma SaaS IoT industrial: polling Modbus, pipeline Kafka, OLTP + Timescale, RBAC, auditoria e observabilidade.",
+      "privateRepoLabel": "Repositório enterprise privado (código disponível sob solicitação)",
+      "seo": {
+        "title": "Case Sistema IoT | Phaiffer Tech",
+        "description": "Case IoT industrial com dashboard de comando, evidências de observabilidade, arquitetura, governança de segurança e resultados enterprise."
+      },
+      "whatItShows": {
+        "title": "O que mostra",
+        "subtitle": "Dois screenshots reais da camada operacional e da stack de observabilidade.",
+        "item1": "Visão Operacional para saúde da frota, alarmes, contexto por tenant e fluxos de comando.",
+        "item2": "Dashboard de Observabilidade Operacional para latência de ingestão, throughput e estado de processamento.",
+        "item3": "Contexto unificado para operação de comandos e diagnóstico em tempo real durante incidentes.",
+        "item4": "UX enterprise pragmática, focada em decisão crítica e não em métricas de vaidade."
+      },
+      "whatItSolves": {
+        "title": "O que resolve",
+        "item1": "Reduz MTTD e MTTR em incidentes de telemetria e no caminho de comandos.",
+        "item2": "Melhora a confiabilidade de operações industriais multi-tenant com isolamento rigoroso.",
+        "item3": "Cria uma verdade operacional única entre ingestão, despacho de comando e alertas.",
+        "item4": "Suporta escala previsível de pilotos para operações enterprise multi-site."
+      },
       "executiveSummary": {
         "title": "Resumo Executivo",
         "body": "Arquitetura flagship para operações com alta carga de telemetria. A plataforma é orientada a eventos, multi-tenant e preparada para ingestão de alto volume com analytics resiliente."
       },
       "architecture": {
-        "title": "Destaques de Arquitetura",
-        "item1": "Backbone de eventos centrado em Kafka para ingestão, fan-out e recuperação com replay seguro.",
-        "item2": "TimescaleDB e modelos operacionais de leitura para dashboards de baixa latência.",
-        "item3": "Estratégia de isolamento por tenant em ingestão, processamento e APIs.",
-        "item4": "Interfaces de serviço preparadas para integrações corporativas e expansão de módulos."
+        "title": "Arquitetura",
+        "item1": "Polling Modbus e adaptadores de protocolo levam telemetria de campo para um backbone centrado em Kafka.",
+        "item2": "Serviços de processamento enriquecem e roteiam dados para fluxos OLTP e analytics temporal em Timescale.",
+        "item3": "APIs de comando desacopladas da ingestão preservam resiliência em cenários de pico.",
+        "item4": "Fluxos de replay e backfill garantem recuperação determinística após janelas perdidas ou falhas downstream."
       },
-      "reliability": {
-        "title": "Confiabilidade e Observabilidade",
-        "item1": "Estratégia de SLI e alertas para lag de ingestão, throughput e falhas de processamento.",
-        "item2": "Logs estruturados, tracing distribuído e dashboards para triagem rápida de incidentes.",
-        "item3": "Tratamento de falhas com orquestração de replay e recuperação operacional determinística.",
-        "item4": "Postura de HA com fallback de DR planejado para degradação regional."
-      },
-      "security": {
-        "title": "Postura de Segurança",
-        "item1": "Controles RBAC alinhados a fronteiras de tenant e operação.",
-        "item2": "Estratégia de isolamento de segredos e credenciais para componentes e integrações.",
-        "item3": "Controles de contratos de eventos e APIs para reduzir risco de exposição indevida.",
-        "item4": "Rastreabilidade operacional orientada a auditoria e compliance."
+      "securityGovernance": {
+        "title": "Segurança e Governança",
+        "item1": "Controles RBAC aplicam fronteiras por tenant para operadores, administradores e integradores.",
+        "item2": "Ações de comando e acesso a dados são auditadas com ator, timestamp e escopo.",
+        "item3": "Segredos e credenciais de conectores são isolados por ambiente e integração.",
+        "item4": "Governança operacional baseada em runbooks, ownership explícito e protocolo de incidentes/postmortem."
       },
       "evidence": {
         "title": "Evidências",
-        "item1": "Runbooks operacionais cobrindo restart, replay e contenção de incidentes.",
-        "item2": "Dashboards e pacotes de alertas para saúde de ingestão, atividade por tenant e latência.",
-        "item3": "Abordagem documentada de DR/HA com hipóteses de failover e objetivos de recuperação."
+        "item1": "Runbooks operacionais para restart, replay e contenção de incidentes no caminho de comandos.",
+        "item2": "Pacotes de alertas ligados a lag de ingestão, backlog de processamento e error budget por tenant.",
+        "item3": "Dashboards de produção que comprovam throughput, latência e comportamento de serviço ao longo do tempo."
       },
       "screenshots": {
-        "title": "Slots de Screenshot",
-        "slot1Alt": "Screenshot de visão geral operacional do IoT",
-        "slot1Caption": "Visão operacional",
-        "slot2Alt": "Screenshot de dashboard de observabilidade do IoT",
-        "slot2Caption": "Dashboard de observabilidade",
-        "placeholder": "Screenshot pendente"
+        "commandAlt": "Screenshot da Visão Operacional da plataforma IoT",
+        "commandCaption": "Visão Operacional",
+        "observabilityAlt": "Screenshot do Dashboard de Observabilidade Operacional da plataforma IoT",
+        "observabilityCaption": "Dashboard de Observabilidade Operacional"
       },
-      "roadmap": {
-        "title": "Roadmap para Nível Enterprise",
-        "body": "Próximos marcos de hardening incluem padronização de CI/CD, expansão de testes automatizados e promotion gates entre ambientes de desenvolvimento, staging e produção."
-      },
-      "productsCta": "Ver produtos",
-      "requestDemoCta": "Solicitar demo"
+      "caseStudiesCta": "Ver estudos de caso",
+      "consultingCta": "Discutir seu cenário"
     },
     "crm": {
       "eyebrow": "// case privado enterprise",
@@ -511,66 +519,103 @@
   },
   "publicCases": {
     "enterpriseDataPlatform": {
-      "eyebrow": "// estudo de caso público com KPIs",
+      "eyebrow": "// estudo de caso público backend",
       "title": "Enterprise Industrial Data Platform",
-      "summary": "Resultados mensuráveis de uma arquitetura de plataforma de dados em dois modos, onde validação determinística local e operação enterprise governada compartilham a mesma semântica contratual.",
+      "summary": "Case enterprise orientado a backend mostrando como data flow, SLAs, contratos, quality gates e observabilidade viram evidência pública de entrega.",
+      "seo": {
+        "title": "Case Enterprise Industrial Data Platform | Phaiffer Tech",
+        "description": "Case backend com diagrama de arquitetura, data flow, SLAs, contratos, quality gates, sinais de observabilidade e artefatos públicos de evidência."
+      },
       "repositoryCta": "Abrir repositório público",
       "engineeringCta": "Abrir deep dive de engenharia",
-      "kpisTitle": "Resultados de KPI",
-      "kpisSubtitle": "Métricas capturadas durante ciclos de implementação e hardening para validar valor de plataforma e prontidão operacional.",
-      "kpis": {
-        "item1": {
-          "value": "99,3%",
-          "label": "Taxa de aprovação contratual (Silver -> Gold)",
-          "detail": "Linhas que atenderam gates obrigatórios de schema e expectativas antes da promoção para datasets Gold."
-        },
-        "item2": {
-          "value": "-57%",
-          "label": "Tempo de triagem de incidentes",
-          "detail": "Redução no tempo médio para isolar causa raiz após padronização de metadados de execução, alertas e dashboards."
-        },
-        "item3": {
-          "value": "2,4x",
-          "label": "Onboarding de ambiente mais rápido",
-          "detail": "Aceleração obtida com bootstrap determinístico do Modo 1 e execução reproduzível de comandos/runbook."
-        },
-        "item4": {
-          "value": "0",
-          "label": "Promoções silenciosas com schema drift",
-          "detail": "Drifts de schema detectados e bloqueados por gates contratuais antes de impactar consumidores analíticos."
-        }
+      "whatItShows": {
+        "title": "O que mostra",
+        "item1": "Uma plataforma de dados industrial orientada à produção com fronteiras explícitas de confiança da ingestão ao analytics.",
+        "item2": "Exports determinísticos de portfólio e manifestos machine-readable para sales enablement.",
+        "item3": "Disciplina de entrega contratual, com controles de qualidade tratados como gates mandatórios de release.",
+        "item4": "Artefatos operacionais públicos que clientes e recrutadores podem verificar diretamente no repositório."
       },
-      "governance": {
-        "title": "Modelo de Governança",
-        "item1": "Produtores de domínio são donos dos contratos de origem em Bronze e responsáveis por comunicar mudanças upstream.",
-        "item2": "Ownership da plataforma de dados governa padrões de transformação compartilhados, políticas de lineage e controles de release.",
-        "item3": "Donos de produtos de dados aprovam mudanças semânticas de Silver para Gold com contratos versionados e checklists de revisão.",
-        "item4": "Responsabilidade operacional é explícita por ownership de execução, rotação de on-call e cadência de postmortem de incidentes."
+      "whatItSolves": {
+        "title": "O que resolve",
+        "item1": "Handoffs inconsistentes entre times de ingestão e consumo analítico.",
+        "item2": "Baixa confiança em KPIs causada por enforcement fraco de qualidade e suposições implícitas.",
+        "item3": "Triagem de incidentes difícil por ausência de contexto de execução e sinais fragmentados de observabilidade.",
+        "item4": "Comunicação fraca com clientes quando projetos backend não possuem artefatos claros de demonstração."
       },
-      "quality": {
-        "title": "Enforcement de Qualidade de Dados",
-        "item1": "Testes de modelo no dbt executam como gates obrigatórios para chaves, relacionamentos e restrições semânticas antes da publicação.",
-        "item2": "Checkpoints do Great Expectations aplicam completude, validade e limites de drift em ingestão e refinamento.",
-        "item3": "Registros reprovados são isolados em datasets de quarentena com metadados de falha para replay e remediação.",
-        "item4": "Políticas de promoção exigem gates verdes de qualidade em CI/CD, bloqueando bypass manual no fluxo padrão de release."
+      "architecture": {
+        "title": "Arquitetura",
+        "subtitle": "Snapshot em Mermaid do modelo operacional usado nas demonstrações de portfólio.",
+        "item1": "Fluxo em camadas de Bronze para Silver e Gold com fronteiras claras de promoção.",
+        "item2": "Quality gates e observabilidade ligados ao fluxo de promoção, não tratados como etapa opcional.",
+        "item3": "Contexto reproduzível de execução com run_id, timestamps, row counts e resultados de DQ.",
+        "item4": "Geração de relatório de portfólio isolada dos dados brutos para manter artefatos públicos leves."
       },
-      "screenshots": {
-        "title": "Placeholders de Evidência",
-        "subtitle": "Os slots abaixo estão preparados para artefatos públicos de evidência: lineage do dbt, Data Docs do Great Expectations e monitoramento Grafana no Modo 2.",
-        "placeholder": "Screenshot pendente",
-        "dbtLineageAlt": "placeholder de screenshot de lineage do dbt",
-        "dbtLineageCaption": "Visão de lineage dbt (placeholder)",
-        "greatExpectationsAlt": "placeholder de screenshot de Data Docs do Great Expectations",
-        "greatExpectationsCaption": "Great Expectations Data Docs (placeholder)",
-        "grafanaAlt": "placeholder de screenshot de dashboard Grafana no Modo 2",
-        "grafanaCaption": "Dashboard de confiabilidade Grafana Modo 2 (placeholder)"
+      "dataFlow": {
+        "title": "Data flow",
+        "item1": "Registros de origem entram em Bronze com metadados de ingestão e rastreabilidade imutável.",
+        "item2": "Silver aplica normalização de tipos, deduplicação e conformidade de schema.",
+        "item3": "Gold publica data products prontos para consumo e tabelas orientadas a KPI.",
+        "item4": "Job de portfolio export lê saídas curadas e gera evidence packs prontos para website."
       },
-      "outcomes": {
-        "title": "Resultados Mensuráveis de Entrega",
-        "item1": "Fluxo de release orientado a contratos reduziu retrabalho downstream ao bloquear mudanças quebrando antes da publicação Gold.",
-        "item2": "Papéis de governança reduziram ambiguidade de ownership, melhorando velocidade de escalonamento em incidentes de dados.",
-        "item3": "Arquitetura de dois modos preservou velocidade de engenharia sem comprometer requisitos de controle enterprise.",
-        "item4": "Artefatos públicos de reprodutibilidade criaram prova objetiva para entrevistas sobre arquitetura, confiabilidade e operação de plataforma."
+      "slas": {
+        "title": "SLAs",
+        "item1": "SLAs de runtime por estágio são monitorados e publicados em cada run manifest.",
+        "item2": "Expectativas de freshness são definidas antes do consumo por stakeholders.",
+        "item3": "Limiares de alerta cobrem regressão de latência e janelas de processamento travadas.",
+        "item4": "Sinais de compliance com SLA entram no pacote de evidências de readiness."
+      },
+      "contracts": {
+        "title": "Contratos de dados",
+        "item1": "Contratos de schema são aplicados nas fronteiras de ingestão e transformação.",
+        "item2": "Ownership por camada é explícito entre responsabilidades Bronze, Silver e Gold.",
+        "item3": "Mudanças contratuais são revisáveis e rastreáveis pelo histórico versionado do projeto.",
+        "item4": "Resultados dos contratos ficam visíveis em CI e artefatos de execução para auditoria."
+      },
+      "qualityGates": {
+        "title": "Quality gates",
+        "item1": "Testes dbt rodam como gates de release para chaves, relacionamentos e hipóteses semânticas.",
+        "item2": "Checkpoints do Great Expectations aplicam regras de completude, validade e valores permitidos.",
+        "item3": "Contagem de violações é resumida em run manifests e charts de qualidade exportados.",
+        "item4": "Fluxos de promoção exigem validação verde antes da publicação downstream."
+      },
+      "observabilitySignals": {
+        "title": "Sinais de observabilidade",
+        "item1": "Métricas de runtime, throughput e freshness são capturadas por estágio de execução.",
+        "item2": "Resultados de qualidade de dados são publicados como estatísticas explícitas de validação.",
+        "item3": "Jobs de export rastreiam tamanho de artefatos e metadados de geração para reprodutibilidade.",
+        "item4": "Status operacional é empacotado como evidência para due diligence técnica."
+      },
+      "securityGovernance": {
+        "title": "Segurança e Governança",
+        "item1": "Nenhum segredo ou dataset privado é versionado nos artefatos públicos.",
+        "item2": "Guia do repositório define fronteiras entre artefatos públicos e dados gerados em runtime.",
+        "item3": "Narrativas de governança explicam ownership, controles e critérios de release.",
+        "item4": "Diretrizes de tratamento de PII estão documentadas para adaptação enterprise."
+      },
+      "evidenceArtifacts": {
+        "title": "Artefatos de evidência",
+        "repoLabel": "Repositório público",
+        "repoDescription": "Árvore completa de código com comandos reproduzíveis e contexto arquitetural.",
+        "runbookLabel": "Runbook",
+        "runbookDescription": "Procedimentos de execução e operação para o fluxo reproduzível do pipeline.",
+        "contractsLabel": "Contratos de dados",
+        "contractsDescription": "Documentação de schema e validação aplicada pela plataforma.",
+        "productionPathLabel": "Caminho de produção",
+        "productionPathDescription": "Guia de operação do modo local validado até o runtime enterprise.",
+        "portfolioScriptLabel": "Script de portfolio export",
+        "portfolioScriptDescription": "Gerador determinístico de charts e manifestos para evidence packs prontos para website.",
+        "ciLabel": "Workflow de CI",
+        "ciDescription": "Validação automatizada incluindo linting e checks de geração de portfólio."
+      },
+      "demoAssetsStrategy": {
+        "title": "Estratégia de demo assets",
+        "subtitle": "Por que projetos backend são apresentados com evidências verificáveis de engenharia e não com visuais artificiais.",
+        "item1": "Diagramas de arquitetura comunicam decisões e fronteiras do sistema com clareza.",
+        "item2": "Runbooks registram procedimentos operacionais e disciplina de resposta a incidentes.",
+        "item3": "Testes e quality gates comprovam confiabilidade por meio de validações executáveis.",
+        "item4": "Queries de exemplo e lineage de dataset demonstram usabilidade analítica real.",
+        "item5": "Checks de CI entregam prova repetível de saúde do projeto ao longo do tempo.",
+        "item6": "Manifestos de portfólio tornam cada execução de demo auditável e reproduzível."
       }
     }
   }
