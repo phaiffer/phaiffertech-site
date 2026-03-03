@@ -411,7 +411,9 @@
         "commandAlt": "Screenshot da Visão Operacional da plataforma IoT",
         "commandCaption": "Visão Operacional",
         "observabilityAlt": "Screenshot do Dashboard de Observabilidade Operacional da plataforma IoT",
-        "observabilityCaption": "Dashboard de Observabilidade Operacional"
+        "observabilityCaption": "Dashboard de Observabilidade Operacional",
+        "zoomLabel": "Clique para ampliar",
+        "closeLabel": "Fechar"
       },
       "caseStudiesCta": "Ver estudos de caso",
       "consultingCta": "Discutir seu cenário"

@@ -86,11 +86,15 @@ export default async function IoTPlatformPage({ params }: Props) {
                   src="/cases/iot-system/dashboard.webp"
                   alt={t("screenshots.commandAlt")}
                   caption={t("screenshots.commandCaption")}
+                  zoomLabel={t("screenshots.zoomLabel")}
+                  closeLabel={t("screenshots.closeLabel")}
                 />
                 <ScreenshotCard
                   src="/cases/iot-system/observability.webp"
                   alt={t("screenshots.observabilityAlt")}
                   caption={t("screenshots.observabilityCaption")}
+                  zoomLabel={t("screenshots.zoomLabel")}
+                  closeLabel={t("screenshots.closeLabel")}
                 />
               </div>
 

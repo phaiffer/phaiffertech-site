@@ -411,7 +411,9 @@
         "commandAlt": "Operational Command View screenshot for the IoT platform",
         "commandCaption": "Operational Command View",
         "observabilityAlt": "Operational Observability Dashboard screenshot for the IoT platform",
-        "observabilityCaption": "Operational Observability Dashboard"
+        "observabilityCaption": "Operational Observability Dashboard",
+        "zoomLabel": "Click to zoom",
+        "closeLabel": "Close"
       },
       "caseStudiesCta": "View case studies",
       "consultingCta": "Discuss your scenario"
