@@ -618,6 +618,48 @@
         "item4": "Queries de exemplo e lineage de dataset demonstram usabilidade analítica real.",
         "item5": "Checks de CI entregam prova repetível de saúde do projeto ao longo do tempo.",
         "item6": "Manifestos de portfólio tornam cada execução de demo auditável e reproduzível."
+      },
+      "businessContext": "Este case demonstra como times enterprise evoluem de dashboards de prova de conceito para analytics industrial governado e auditável sem perder velocidade de entrega.",
+      "visualShowcase": {
+        "title": "O que ele mostra na prática",
+        "subtitle": "Quatro visuais de produção resumem decisões de arquitetura, disciplina de transformação e sinais de confiança que stakeholders de negócio e engenharia conseguem validar rapidamente.",
+        "zoomLabel": "Clique para ampliar",
+        "closeLabel": "Fechar",
+        "cards": {
+          "overview": {
+            "title": "Visão Geral",
+            "description": "Snapshot executivo de domínios de negócio, camadas medallion (Raw/Bronze/Silver/Gold) e fronteiras de responsabilidade de SLA.",
+            "alt": "Screenshot de visão geral da Enterprise Industrial Data Platform com camadas medallion e indicadores de governança",
+            "caption": "Visão Geral da Plataforma"
+          },
+          "architecture": {
+            "title": "Arquitetura",
+            "description": "Visão operacional da orquestração, transformações em dbt e gates de validação antes da promoção para datasets confiáveis.",
+            "alt": "Screenshot de arquitetura mostrando orquestração, pipelines dbt e gates de release",
+            "caption": "Arquitetura de Orquestração e Transformação"
+          },
+          "lineage": {
+            "title": "Lineage",
+            "description": "Lineage ponta a ponta comprovando reprodutibilidade da ingestão bruta até produtos Gold consumidos em relatórios.",
+            "alt": "Screenshot de lineage conectando ingestão de origem a produtos de dados silver e gold",
+            "caption": "Lineage e Reprodutibilidade"
+          },
+          "dataQuality": {
+            "title": "Qualidade de Dados",
+            "description": "Evidências de Great Expectations e resultados de execução expõem gates de aprovação, quarentena e prontidão para release.",
+            "alt": "Screenshot de qualidade de dados com resultados de validação e status dos gates de release",
+            "caption": "Gates de Qualidade de Dados"
+          }
+        }
+      },
+      "deterministicEvidence": {
+        "title": "Evidências / Artefatos",
+        "summary": "Todos os visuais são gerados por artefatos determinísticos, não por slides editados manualmente, permitindo validação independente por clientes e recrutadores.",
+        "artifacts": "As fontes principais incluem arquivos manifest e run_results do dbt, data docs do Great Expectations e pacotes exportados de lineage/relatórios.",
+        "item1": "As transições do medallion são rastreáveis por ownership de modelo e status de promoção entre Raw, Bronze, Silver e Gold.",
+        "item2": "Metadados de orquestração conectam cada execução à revisão de código, janela processada e resultados de validação.",
+        "item3": "Lineage registra dependências upstream e downstream para triagem auditável de incidentes e análise de impacto.",
+        "item4": "Checkpoints de qualidade expõem contagens de aprovação/falha e comportamento de quarentena antes da publicação para negócio."
       }
     }
   }

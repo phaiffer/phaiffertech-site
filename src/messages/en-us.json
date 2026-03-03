@@ -618,6 +618,48 @@
         "item4": "Sample queries and dataset lineage show practical analytics usability.",
         "item5": "CI checks provide repeatable proof that the project remains healthy over time.",
         "item6": "Portfolio manifests make each demo run auditable and reproducible for stakeholders."
+      },
+      "businessContext": "This case demonstrates how enterprise teams move from proof-of-concept dashboards to governed, audit-ready industrial analytics without losing delivery speed.",
+      "visualShowcase": {
+        "title": "What it shows in practice",
+        "subtitle": "Four production visuals summarize architecture decisions, transformation discipline, and trust signals that business and engineering stakeholders can validate quickly.",
+        "zoomLabel": "Click to zoom",
+        "closeLabel": "Close",
+        "cards": {
+          "overview": {
+            "title": "Overview",
+            "description": "Executive snapshot of business domains, medallion layers (Raw/Bronze/Silver/Gold), and SLA ownership boundaries.",
+            "alt": "Overview screenshot of the Enterprise Industrial Data Platform with medallion layers and governance indicators",
+            "caption": "Platform Overview"
+          },
+          "architecture": {
+            "title": "Architecture",
+            "description": "Operational view of orchestration, dbt transformations, and validation gates before promotion to trusted datasets.",
+            "alt": "Architecture screenshot showing orchestration, dbt pipelines, and release gates",
+            "caption": "Orchestration + Transformation Architecture"
+          },
+          "lineage": {
+            "title": "Lineage",
+            "description": "End-to-end lineage proving reproducibility from raw ingestion through curated Gold products consumed by reporting.",
+            "alt": "Lineage screenshot connecting source ingestion to silver and gold data products",
+            "caption": "Lineage and Reproducibility"
+          },
+          "dataQuality": {
+            "title": "Data Quality",
+            "description": "Great Expectations and run-result evidence expose pass/fail gates, quarantined records, and release-readiness health.",
+            "alt": "Data quality screenshot with validation outcomes and release gate status",
+            "caption": "Data Quality Gates"
+          }
+        }
+      },
+      "deterministicEvidence": {
+        "title": "Evidence / Artifacts",
+        "summary": "All visuals are generated from deterministic artifacts instead of manually edited slides, so clients and recruiters can verify claims independently.",
+        "artifacts": "Primary sources include dbt manifest and run_results files, Great Expectations data docs, and exported lineage/report bundles.",
+        "item1": "Medallion transitions are traceable by model ownership and promotion status across Raw, Bronze, Silver, and Gold.",
+        "item2": "Orchestration metadata links each run to code revision, execution window, and validation outcomes.",
+        "item3": "Lineage captures upstream and downstream dependencies for auditable incident triage and impact analysis.",
+        "item4": "Quality checkpoints expose pass/fail counts and quarantine behavior before business-facing publication."
       }
     }
   }

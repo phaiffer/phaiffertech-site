@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { Navbar } from "@/components/sections/Navbar";
 import { Container } from "@/components/ui/Container";
+import { ScreenshotCard } from "@/components/ui/ScreenshotCard";
 import { type AppLocale } from "@/i18n/routing";
 
 const repositoryUrl = "https://github.com/phaiffer/enterprise-industrial-data-platform";
@@ -119,6 +120,48 @@ export default async function EnterpriseDataPlatformCaseStudyPage({ params }: Pr
     t("demoAssetsStrategy.item6"),
   ];
 
+  const screenshotCards = [
+    {
+      key: "overview",
+      src: "/cases/enterprise-platform/overview.webp",
+      title: t("visualShowcase.cards.overview.title"),
+      description: t("visualShowcase.cards.overview.description"),
+      alt: t("visualShowcase.cards.overview.alt"),
+      caption: t("visualShowcase.cards.overview.caption"),
+    },
+    {
+      key: "architecture",
+      src: "/cases/enterprise-platform/architecture.webp",
+      title: t("visualShowcase.cards.architecture.title"),
+      description: t("visualShowcase.cards.architecture.description"),
+      alt: t("visualShowcase.cards.architecture.alt"),
+      caption: t("visualShowcase.cards.architecture.caption"),
+    },
+    {
+      key: "lineage",
+      src: "/cases/enterprise-platform/lineage.webp",
+      title: t("visualShowcase.cards.lineage.title"),
+      description: t("visualShowcase.cards.lineage.description"),
+      alt: t("visualShowcase.cards.lineage.alt"),
+      caption: t("visualShowcase.cards.lineage.caption"),
+    },
+    {
+      key: "dataQuality",
+      src: "/cases/enterprise-platform/dataquality.webp",
+      title: t("visualShowcase.cards.dataQuality.title"),
+      description: t("visualShowcase.cards.dataQuality.description"),
+      alt: t("visualShowcase.cards.dataQuality.alt"),
+      caption: t("visualShowcase.cards.dataQuality.caption"),
+    },
+  ];
+
+  const deterministicEvidenceItems = [
+    t("deterministicEvidence.item1"),
+    t("deterministicEvidence.item2"),
+    t("deterministicEvidence.item3"),
+    t("deterministicEvidence.item4"),
+  ];
+
   return (
     <main className="bg-brand-navy">
       <Navbar />
@@ -128,6 +171,7 @@ export default async function EnterpriseDataPlatformCaseStudyPage({ params }: Pr
           <p className="text-xs font-bold tracking-[0.28em] text-brand-cyan uppercase">{t("eyebrow")}</p>
           <h1 className="mt-5 max-w-4xl text-5xl font-black tracking-tight md:text-6xl">{t("title")}</h1>
           <p className="mt-6 max-w-3xl text-lg leading-relaxed text-ui-muted">{t("summary")}</p>
+          <p className="mt-4 max-w-3xl text-base leading-relaxed text-ui-muted">{t("businessContext")}</p>
 
           <div className="mt-8 flex flex-wrap gap-4">
             <a
@@ -168,6 +212,42 @@ export default async function EnterpriseDataPlatformCaseStudyPage({ params }: Pr
               </ul>
             </article>
           </div>
+
+          <article className="mt-8 rounded-[var(--radius-xl)] border border-white/10 bg-white/[0.02] p-6">
+            <h2 className="text-2xl font-bold tracking-tight">{t("visualShowcase.title")}</h2>
+            <p className="mt-4 max-w-3xl text-sm leading-relaxed text-ui-muted">{t("visualShowcase.subtitle")}</p>
+
+            <div className="mt-6 grid gap-5 md:grid-cols-2">
+              {screenshotCards.map((card) => (
+                <article key={card.key} className="rounded-[var(--radius-xl)] border border-white/10 bg-black/20 p-4">
+                  <h3 className="text-lg font-bold tracking-tight">{card.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-ui-muted">{card.description}</p>
+                  <div className="mt-4">
+                    <ScreenshotCard
+                      src={card.src}
+                      alt={card.alt}
+                      caption={card.caption}
+                      sizes="(min-width: 1024px) 40vw, 100vw"
+                      zoomLabel={t("visualShowcase.zoomLabel")}
+                      closeLabel={t("visualShowcase.closeLabel")}
+                    />
+                  </div>
+                </article>
+              ))}
+            </div>
+          </article>
+
+          <article className="mt-8 rounded-[var(--radius-xl)] border border-white/10 bg-white/[0.02] p-6">
+            <h2 className="text-2xl font-bold tracking-tight">{t("deterministicEvidence.title")}</h2>
+            <p className="mt-4 text-sm leading-relaxed text-ui-muted">{t("deterministicEvidence.summary")}</p>
+            <p className="mt-3 text-sm leading-relaxed text-ui-muted">{t("deterministicEvidence.artifacts")}</p>
+
+            <ul className="mt-5 space-y-3 text-sm leading-relaxed text-ui-muted">
+              {deterministicEvidenceItems.map((item) => (
+                <li key={item}>• {item}</li>
+              ))}
+            </ul>
+          </article>
 
           <article className="mt-8 rounded-[var(--radius-xl)] border border-white/10 bg-white/[0.02] p-6">
             <h2 className="text-2xl font-bold tracking-tight">{t("architecture.title")}</h2>
